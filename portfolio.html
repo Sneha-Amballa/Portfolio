@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Sneha Amballa | Portfolio</title>
     <style>
         /* ===== Dark Theme Variables ===== */
         :root {
@@ -31,11 +31,46 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from { 
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         /* ===== Header ===== */
@@ -47,6 +82,13 @@
             top: 0;
             z-index: 100;
             border-bottom: 1px solid var(--border);
+            animation: slideDown 0.5s ease-out;
+            transform: translateY(0);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
         .container {
@@ -65,6 +107,11 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo span {
@@ -78,16 +125,33 @@
 
         nav ul li {
             margin-left: 2rem;
+            position: relative;
         }
 
         nav ul li a {
             color: var(--text-light);
             font-weight: 500;
             transition: color 0.3s;
+            padding: 0.5rem 0;
         }
 
         nav ul li a:hover {
             color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
         }
 
         /* ===== Hero Section ===== */
@@ -97,6 +161,25 @@
             align-items: center;
             background: linear-gradient(to right, var(--darker-bg) 0%, var(--dark-bg) 100%);
             padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            animation: pulse 15s infinite alternate;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
@@ -104,10 +187,31 @@
             margin-bottom: 1.5rem;
             font-weight: 700;
             line-height: 1.2;
+            animation: slideRight 0.8s ease-out;
         }
 
         .hero-content h1 span {
             color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-content h1:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .hero-content p {
@@ -116,6 +220,13 @@
             margin-bottom: 2.5rem;
             color: var(--text-light);
             line-height: 1.7;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.3s forwards;
+        }
+
+        .hero-buttons {
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.6s forwards;
         }
 
         .btn {
@@ -129,12 +240,43 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
         }
 
         .btn-outline {
@@ -165,6 +307,8 @@
             font-size: 2.5rem;
             font-weight: 700;
             position: relative;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
         }
 
         .section-title:after {
@@ -175,6 +319,13 @@
             background: var(--primary);
             margin: 1.5rem auto 0;
             border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.5s ease;
+        }
+
+        .section-title.in-view:after {
+            transform: scaleX(1);
         }
 
         .about-content {
@@ -188,6 +339,14 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .about-img.in-view {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .about-img img {
@@ -204,6 +363,14 @@
 
         .about-text {
             flex: 1;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s ease-out 0.2s;
+        }
+
+        .about-text.in-view {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .about-text h3 {
@@ -218,6 +385,7 @@
             line-height: 1.8;
         }
 
+        /* ===== Skills Section ===== */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -232,6 +400,14 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border);
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .skill-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .skill-card:hover {
@@ -244,6 +420,11 @@
             font-size: 2.8rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.1);
         }
 
         .skill-card h3 {
@@ -271,6 +452,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .project-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .project-card:hover {
@@ -282,6 +471,24 @@
         .project-img {
             height: 220px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .project-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(108, 99, 255, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .project-card:hover .project-img::before {
+            opacity: 1;
         }
 
         .project-img img {
@@ -318,11 +525,27 @@
             font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            position: relative;
         }
 
         .project-links a:hover {
             color: var(--accent);
+        }
+
+        .project-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .project-links a:hover::after {
+            width: 100%;
         }
 
         .project-links i {
@@ -335,6 +558,17 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 4rem;
+        }
+
+        .contact-info {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .contact-info.in-view {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .contact-info h3 {
@@ -352,6 +586,12 @@
             display: flex;
             align-items: center;
             color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .contact-details p:hover {
+            color: var(--primary);
+            transform: translateX(5px);
         }
 
         .contact-details i {
@@ -389,6 +629,17 @@
             box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3);
         }
 
+        .contact-form {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s ease-out 0.2s;
+        }
+
+        .contact-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -414,6 +665,7 @@
             resize: vertical;
         }
 
+        /* ===== Footer ===== */
         footer {
             background: var(--darker-bg);
             color: var(--text-light);
@@ -422,6 +674,34 @@
             border-top: 1px solid var(--border);
         }
 
+        /* ===== Scroll Indicator ===== */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* ===== Responsive Styles ===== */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -494,7 +774,6 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -517,12 +796,15 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hello, I'm <span>Sneha Amballa</span></h1>
-                <p>Second Year Computer Science student</p>
-                <div>
+                <p>A pre-final year Computer Science student passionate about building innovative, real-world solutions through code.</p>
+                <div class="hero-buttons">
                     <a href="#projects" class="btn">View Projects</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
@@ -535,8 +817,7 @@
                 </div>
                 <div class="about-text">
                     <h3>Computer Science Student & Developer</h3>
-                    <p>I'm currently pursuing my Bachelor's degree in Computer Science with a focus on software engineering principles and web technologies. My academic journey has provided me with a strong foundation in problem solving and data structures.</p>
-                    <p>Beyond coursework, I actively engage in personal projects and competitive programming to sharpen my skills. I'm particularly interested in full-stack development.</p>
+                    <p> I'm a Computer Science student at CBIT with a strong foundation in Python, Data Structures, and Object-Oriented Programming. I’m currently expanding my skills in web development and have built several static and full-stack projects using HTML, CSS, JavaScript, React, Node.js, and MongoDB. I enjoy solving coding problems on platforms like CodeChef and LeetCode, and I’m passionate about building practical tech solutions that align with real-world needs.</p>
                     <a href="Sneha_Amballa_Resume.pdf" class="btn">Download Resume</a>
                 </div>
             </div>
@@ -556,7 +837,7 @@
                 <div class="skill-card">
                     <i class="fas fa-server"></i>
                     <h3>Backend Development</h3>
-                    <p>Node.js, Express, Python, REST APIs</p>
+                    <p>Node.js, Express, REST APIs</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
@@ -566,7 +847,7 @@
                 <div class="skill-card">
                     <i class="fas fa-terminal"></i>
                     <h3>Programming</h3>
-                    <p>Python , C , Java , OOPS , Data Structures</p>
+                    <p>Python, C, Java, OOPS, Data Structures</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-code-branch"></i>
@@ -576,7 +857,7 @@
                 <div class="skill-card">
                     <i class="fas fa-chart-line"></i>
                     <h3>Data Analysis</h3>
-                    <p>Pandas , NumPy , Matplotlib</p>
+                    <p>Pandas, NumPy, Matplotlib</p>
                 </div>
             </div>
         </div>
@@ -592,8 +873,7 @@
                     </div>
                     <div class="project-info">
                         <h3>CBIT Study Network</h3>
-                        <p>CBIT Study Network is a collaborative platform for students to engage in group or solo study, share resources, 
-                            track study performance, and earn rewards for active participation.</p>
+                        <p>CBIT Study Network is a static multi-page website that simulates a student-focused platform offering solo and group study modes, to-do lists, profile and login UIs, chat interfaces, and academic resource pages—designed using only HTML, CSS, and JavaScript.</p>
                         <div class="project-links">
                             <a href="https://github.com/Sneha-Amballa/CBIT-Study-Network.git"><i class="fab fa-github"></i> Source Code</a>
                             <a href="https://raw.githack.com/Sneha-Amballa/CBIT-Study-Network/refs/heads/main/home.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -610,12 +890,23 @@
                         <div class="project-links">
                             <a href="https://github.com/Sneha-Amballa/HospiConnect_.git"><i class="fab fa-github"></i> Source Code</a>
                             <a href="https://hospiconnect.netlify.app/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-
                         </div>
                     </div>
                 </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="MoodJournal.png" alt="MoodJournal">
+                    </div>
+                    <div class="project-info">
+                        <h3>MoodJournal</h3>
+                        <p>Mood Journal is a full-stack web app that lets users log daily moods, analyze emotions using AI (HuggingFace), and visualize trends via interactive dashboards—built with React, Node.js, MongoDB, and JWT authentication.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Sneha-Amballa/MoodJournal.git"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="https://heroic-klepon-0ddab1.netlify.app/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -629,22 +920,13 @@
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> sneha.amballa0804@gmail.com</p>
                         <p><i class="fas fa-phone"></i> +91 8317589978</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Nizamabad , Hyderabad</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Nizamabad, Hyderabad</p>
                     </div>
                     <h3>Connect With Me</h3>
                     <div class="social-links">
                         <a href="https://github.com/Sneha-Amballa" title="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/sneha-amballa-147646308/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -657,61 +939,99 @@
     </footer>
 
     <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const form = this;
-            const successMsg = document.createElement('div');
-            successMsg.innerHTML = `
-                <div style="
-                    background: var(--primary);
-                    color: white;
-                    padding: 1rem;
-                    border-radius: 6px;
-                    margin-top: 1rem;
-                    text-align: center;
-                ">
-                    <i class="fas fa-check-circle"></i> Thank you for your message!
-                </div>
-            `;
-            form.parentNode.insertBefore(successMsg, form.nextSibling);
-            form.reset();
-            setTimeout(() => successMsg.remove(), 5000);
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    if (entry.target.classList.contains('section-title')) {
+                        entry.target.querySelector(':after').style.transform = 'scaleX(1)';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const sections = document.querySelectorAll('.section-title, .about-img, .about-text, .skill-card, .project-card, .contact-info, .contact-form');
+        sections.forEach(section => {
+            observer.observe(section);
         });
 
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Scroll indicator animation
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', () => {
+                window.scrollTo({
+                    top: document.querySelector('#about').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
 
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.skill-card, .project-card, .about-img, .about-text');
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > window.innerHeight * 0.5) {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.pointerEvents = 'none';
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                    scrollIndicator.style.pointerEvents = 'auto';
                 }
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.skill-card, .project-card, .about-img, .about-text');
-            elements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease-out';
+        // Button ripple effect
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple-effect');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
             });
-            setTimeout(animateOnScroll, 300);
         });
 
-        window.addEventListener('scroll', animateOnScroll);
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+                header.style.padding = '0.8rem 0';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.padding = '1.2rem 0';
+            }
+        });
     </script>
 </body>
 </html>
