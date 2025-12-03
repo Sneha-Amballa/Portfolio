@@ -154,6 +154,92 @@
             width: 100%;
         }
 
+        /* ===== Mobile Toggle Button ===== */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 8px;
+            border: none;
+            background: transparent;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        #mobileMenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--darker-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            animation: slideDown 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        #mobileMenu.active {
+            display: block;
+            max-height: 400px;
+        }
+
+        #mobileMenu ul {
+            flex-direction: column;
+            text-align: center;
+            display: flex !important;
+            margin-top: 0 !important;
+        }
+
+        #mobileMenu ul li {
+            margin: 0.8rem 0;
+            opacity: 0;
+            animation: fadeIn 0.4s ease-out forwards;
+            list-style: none;
+        }
+
+        #mobileMenu ul li a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        #mobileMenu ul li a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        #mobileMenu ul li:nth-child(1) { animation-delay: 0.05s; }
+        #mobileMenu ul li:nth-child(2) { animation-delay: 0.1s; }
+        #mobileMenu ul li:nth-child(3) { animation-delay: 0.15s; }
+        #mobileMenu ul li:nth-child(4) { animation-delay: 0.2s; }
+        #mobileMenu ul li:nth-child(5) { animation-delay: 0.25s; }
+
         /* ===== Hero Section ===== */
         .hero {
             height: 100vh;
@@ -293,7 +379,7 @@
 
         /* ===== About Section ===== */
         .section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: var(--dark-bg);
         }
 
@@ -699,17 +785,28 @@
 
         /* ===== Responsive Styles ===== */
         @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
             .header-container {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            nav {
+                width: 100%;
             }
 
             nav ul {
-                margin-top: 1.5rem;
+                display: none;
+                margin-top: 0;
+                flex-direction: column;
             }
 
             nav ul li {
-                margin: 0 1rem;
+                margin: 1rem 0;
             }
 
             .hero {
@@ -768,25 +865,200 @@
                 font-size: 2rem;
             }
         }
+        /* ===== CONTACT FORM ===== */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+/* Left side information */
+.contact-info h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.contact-details p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+.contact-details p:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.contact-details i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* Social icons */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+.social-links a {
+    width: 42px;
+    height: 42px;
+    background: var(--card-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+.social-links a:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ===== FORM ===== */
+.contact-form {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.contact-form h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(108,99,255,0.1);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Buttons */
+.form-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.note a {
+    color: var(--primary);
+}
+
+/* Status messages */
+.status {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+.status.success {
+    background: rgba(34,197,94,0.12);
+    color: var(--success);
+    border: 1px solid rgba(34,197,94,0.25);
+}
+.status.error {
+    background: rgba(255,50,50,0.1);
+    color: var(--danger);
+    border: 1px solid rgba(255,50,50,0.2);
+}
+.hidden {
+    display: none;
+}
+.hidden-field {
+    display: none !important;
+}
+/* Desktop nav visible */
+.desktop-nav ul {
+    display: flex;
+}
+
+/* Hide desktop nav in mobile */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+}
+
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">Sneha<span> Amballa</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container header-container">
+
+        <div class="logo">Sneha<span> Amballa</span></div>
+
+        <!-- ⭐ Desktop Navbar -->
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- ⭐ Mobile Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- ⭐ Mobile Menu -->
+        <nav id="mobileMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
 
     <section class="hero" id="home">
         <div class="container">
@@ -911,20 +1183,75 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-envelope"></i> sneha.amballa0804@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> +91 8317589978</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Nizamabad, Hyderabad</p>
-                    </div>
-                    <h3>Connect With Me</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/Sneha-Amballa" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/sneha-amballa-147646308/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+    
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> sneha.amballa0804@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +91 8317589978</p>
+            <p><i class="fas fa-map-marker-alt"></i> Nizamabad, Hyderabad</p>
+        </div>
+
+        <h3>Connect With Me</h3>
+        <div class="social-links">
+            <a href="https://github.com/Sneha-Amballa"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sneha-amballa-147646308/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <!-- ⭐ Contact Form -->
+    <form id="contactForm" class="contact-form"
+          action="https://formspree.io/f/xovgwper"
+          method="POST" novalidate>
+
+        <h3>Send me a message</h3>
+
+        <!-- hidden bot field -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none;">
+
+        <div id="formStatus" class="status hidden"></div>
+
+        <div class="field">
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" required minlength="2"
+                   placeholder="Your name">
+        </div>
+
+        <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required
+                   placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text"
+                   placeholder="Subject (optional)">
+        </div>
+
+        <div class="field">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required minlength="10"
+                      placeholder="Write your message..."></textarea>
+        </div>
+
+        <div class="form-footer">
+            <div>
+                <button type="submit" id="submitBtn" class="btn">Send Message</button>
+                <button type="reset" id="resetBtn"
+                        class="btn btn-outline">Reset</button>
             </div>
+
+            <div class="note">
+                Or email directly:
+                <a href="mailto:sneha.amballa0804@gmail.com">
+                    sneha.amballa0804@gmail.com
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
         </div>
     </section>
 
@@ -933,105 +1260,343 @@
             <p>&copy; <span id="year"></span> Sneha Amballa. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+/* ===== Unified Page Script (UI + Debuggable Formspree handler) ===== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
+console.log("⏳ SCRIPT LOADED — unified script starting...");
+
+// Global error handlers so nothing fails silently
+window.addEventListener('error', function (ev) {
+    console.error("GLOBAL ERROR:", ev.message, "at", ev.filename + ":" + ev.lineno + ":" + ev.colno, ev.error);
+});
+window.addEventListener('unhandledrejection', function (ev) {
+    console.error("UNHANDLED PROMISE REJECTION:", ev.reason);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("📦 DOMContentLoaded fired — initializing handlers...");
+
+    try {
+        // ===== ELEMENT REFERENCES =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const yearEl = document.getElementById('year');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const buttons = document.querySelectorAll('.btn');
+
+        // Defensive: ensure mobileMenu exists before querySelectorAll
+        const menuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+        // ===== MOBILE TOGGLE MENU =====
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside header
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('header')) {
+                    mobileToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        } else {
+            console.warn("⚠ Mobile toggle or menu not found:", { mobileToggle, mobileMenu });
+        }
+
+        // Close menu when a link is clicked (mobile)
+        if (menuLinks.length) {
+            menuLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    const target = document.querySelector(href);
+                    // Close menu first (if present)
+                    if (mobileToggle) mobileToggle.classList.remove('active');
+                    if (mobileMenu) mobileMenu.classList.remove('active');
+
+                    // Smooth scroll after a tiny delay so menu close animation is visible
+                    setTimeout(() => {
+                        if (target) {
+                            window.scrollTo({
+                                top: target.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            console.warn("Target not found for link:", href);
+                        }
+                    }, 220);
+                });
+            });
+        }
+
+        // ===== UPDATE YEAR =====
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // ===== SMOOTH SCROLL FOR ALL ANCHORS STARTING WITH # =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // skip if link is part of mobile menu (already handled above), but safe to keep
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== INTERSECTION OBSERVER FOR IN-VIEW ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+
+        const sections = document.querySelectorAll('.section-title, .about-img, .about-text, .skill-card, .project-card, .contact-info, .contact-form');
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // ===== SCROLL INDICATOR BEHAVIOR =====
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', () => {
+                const about = document.querySelector('#about');
+                if (about) {
+                    window.scrollTo({
+                        top: about.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > window.innerHeight * 0.5) {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.pointerEvents = 'none';
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                    scrollIndicator.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        // ===== BUTTON RIPPLE EFFECT =====
+        if (buttons && buttons.length) {
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    // allow links with href to proceed normally
+                    if (this.tagName === "A") e.preventDefault();
+
+
+                    const x = e.clientX - this.getBoundingClientRect().left;
+                    const y = e.clientY - this.getBoundingClientRect().top;
+
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple-effect');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255,255,255,0.3)';
+                    ripple.style.pointerEvents = 'none';
+                    ripple.style.width = ripple.style.height = '100px';
+                    ripple.style.left = `${x - 50}px`;
+                    ripple.style.top = `${y - 50}px`;
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.transition = 'transform 0.6s ease, opacity 1s ease';
+
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+
+                    requestAnimationFrame(() => {
+                        ripple.style.transform = 'scale(2)';
+                        ripple.style.opacity = '0';
+                    });
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 1000);
+                });
+            });
+        }
+
+        // ===== HEADER SHADOW ON SCROLL =====
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (!header) return;
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+                header.style.padding = '0.8rem 0';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.padding = '1.2rem 0';
+            }
+        });
+
+        // ===== FORM VALIDATION + FORMSPREE SUBMISSION WITH DEBUG LOGS =====
+        (function () {
+            const form = document.getElementById("contactForm");
+            const submitBtn = document.getElementById("submitBtn");
+            const resetBtn = document.getElementById("resetBtn");
+            const statusEl = document.getElementById("formStatus");
+
+            if (!form) {
+                console.warn("⚠ contactForm not found — form handler will not attach.");
+                return;
+            }
+
+            console.log("Form action:", form.action, "method:", form.method);
+
+            function showStatus(msg, type) {
+                console.log("STATUS MESSAGE:", msg, "| TYPE:", type);
+                if (!statusEl) return;
+                statusEl.textContent = msg;
+                statusEl.classList.remove("hidden", "success", "error");
+                statusEl.classList.add(type);
+                setTimeout(() => statusEl.classList.add("hidden"), 6000);
+            }
+
+            function validate(formData) {
+                console.log("🔍 Validating form data...");
+                const name = (formData.get("name") || "").trim();
+                const email = (formData.get("email") || "").trim();
+                const message = (formData.get("message") || "").trim();
+
+                console.log(" - name:", name);
+                console.log(" - email:", email);
+                console.log(" - message length:", message.length);
+
+                if (name.length < 2) return "Please enter your name (min 2 characters).";
+                if (!/^\S+@\S+\.\S+$/.test(email)) return "Enter a valid email.";
+                if (message.length < 10) return "Message must be at least 10 characters.";
+                return null;
+            }
+
+            form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    console.log("🚀 SUBMIT BUTTON CLICKED — event triggered!");
+
+    try {
+        console.log("🟣 Checking if submit button exists:", submitBtn);
+
+        // Anti-bot _gotcha field
+        const gotchaEl = form.querySelector("[name='_gotcha']");
+        const botValue = gotchaEl ? gotchaEl.value.trim() : null;
+        console.log("🔵 Gotcha (bot field) value:", botValue);
+
+        if (gotchaEl && botValue !== "") {
+            console.warn("⚠ Bot detected — stopping submission.");
+            return;
+        }
+
+        if (submitBtn) {
+            console.log("🟣 Submit button state BEFORE disabling:", submitBtn.disabled);
+            submitBtn.disabled = true;
+            submitBtn.dataset.origText = submitBtn.textContent;
+            submitBtn.textContent = "Sending...";
+            console.log("🟣 Submit button disabled + text changed.");
+        }
+
+        const formData = new FormData(form);
+        console.log("🟡 FormData prepared:", Object.fromEntries(formData.entries()));
+
+        // Validate
+        const validationError = validate(formData);
+        console.log("🟡 Validation result:", validationError);
+
+        if (validationError) {
+            console.warn("❌ Validation failed:", validationError);
+            showStatus(validationError, "error");
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.origText || "Send Message";
+            return;
+        }
+
+        const actionUrl = (form.action || "").trim();
+        console.log("🟣 ACTION URL:", actionUrl);
+
+        if (!actionUrl) {
+            console.error("❌ No action URL found.");
+            showStatus("Form not configured (no action URL).", "error");
+            return;
+        }
+
+        console.log("📡 Sending POST request to Formspree...");
+
+        let res;
+        try {
+            res = await fetch(actionUrl, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+            console.log("📨 FETCH COMPLETED — status:", res.status);
+        } catch (fetchErr) {
+            console.error("💥 FETCH FAILED:", fetchErr);
+            showStatus("Network error. Try again.", "error");
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.origText || "Send Message";
+            return;
+        }
+
+        // Try JSON parse
+        let responseData = {};
+        try {
+            responseData = await res.json();
+            console.log("📦 Response JSON:", responseData);
+        } catch (parseErr) {
+            console.warn("⚠ Could not parse JSON response:", parseErr);
+        }
+
+        if (res.ok) {
+            console.log("❤️ MESSAGE SENT SUCCESSFULLY.");
+            showStatus("Message sent successfully!", "success");
+            form.reset();
+        } else {
+            console.error("❌ Server returned error:", responseData);
+            const msg = responseData?.message || ("Error sending message. HTTP " + res.status);
+            showStatus(msg, "error");
+        }
+
+    } catch (err) {
+        console.error("💥 ERROR INSIDE SUBMIT HANDLER:", err);
+        showStatus("Unexpected error. Check console.", "error");
+    } finally {
+        if (submitBtn) {
+            console.log("🟣 Restoring submit button state...");
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.origText || "Send Message";
+        }
+        console.log("🔁 Submit handler finished.");
+    }
+});
+
+            if (resetBtn) {
+                resetBtn.addEventListener("click", function () {
+                    console.log("🧹 Reset button clicked - hiding status");
+                    if (statusEl) statusEl.classList.add("hidden");
                 });
             }
-        });
-    });
 
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+            console.log("✅ Form handler attached successfully.");
+        })();
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-            }
-        });
-    }, observerOptions);
+        console.log("✅ All handlers initialized.");
 
-    const sections = document.querySelectorAll('.section-title, .about-img, .about-text, .skill-card, .project-card, .contact-info, .contact-form');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', () => {
-            window.scrollTo({
-                top: document.querySelector('#about').offsetTop - 80,
-                behavior: 'smooth'
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > window.innerHeight * 0.5) {
-                scrollIndicator.style.opacity = '0';
-                scrollIndicator.style.pointerEvents = 'none';
-            } else {
-                scrollIndicator.style.opacity = '1';
-                scrollIndicator.style.pointerEvents = 'auto';
-            }
-        });
+    } catch (err) {
+        console.error("💥 Initialization error:", err);
     }
-
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            if (!this.hasAttribute('href')) e.preventDefault();
-
-            const x = e.clientX - this.getBoundingClientRect().left;
-            const y = e.clientY - this.getBoundingClientRect().top;
-
-            const ripple = document.createElement('span');
-            ripple.classList.add('ripple-effect');
-            ripple.style.position = 'absolute';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(255,255,255,0.3)';
-            ripple.style.pointerEvents = 'none';
-            ripple.style.width = ripple.style.height = '100px';
-            ripple.style.left = `${x - 50}px`;
-            ripple.style.top = `${y - 50}px`;
-            ripple.style.transform = 'scale(0)';
-            ripple.style.transition = 'transform 0.6s ease, opacity 1s ease';
-
-            this.style.position = 'relative';
-            this.appendChild(ripple);
-
-            requestAnimationFrame(() => {
-                ripple.style.transform = 'scale(2)';
-                ripple.style.opacity = '0';
-            });
-
-            setTimeout(() => {
-                ripple.remove();
-            }, 1000);
-        });
-    });
-
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-            header.style.padding = '0.8rem 0';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.padding = '1.2rem 0';
-        }
-    });
+});
 </script>
+
 </body>
 </html>
