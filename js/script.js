@@ -2243,28 +2243,61 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Contact Form Interactive Submission
+    // Contact Form Interactive Submission via FormSubmit delivery service
     const portfolioContactForm = document.getElementById('portfolioContactForm');
     const contactSubmitBtn = document.getElementById('contactSubmitBtn');
     const formFeedbackNotice = document.getElementById('formFeedbackNotice');
 
     if (portfolioContactForm && contactSubmitBtn) {
-      portfolioContactForm.addEventListener('submit', (e) => {
+      portfolioContactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const nameInput = document.getElementById('contactName');
         const emailInput = document.getElementById('contactEmail');
         const subjectInput = document.getElementById('contactSubject');
         const messageInput = document.getElementById('contactMessage');
+        const hiddenReplyTo = document.getElementById('hiddenReplyTo');
+        const hiddenFormSubject = document.getElementById('hiddenFormSubject');
 
-        if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const emailVal = emailInput ? emailInput.value.trim() : '';
+        const subjectVal = subjectInput ? subjectInput.value.trim() : '';
+        const messageVal = messageInput ? messageInput.value.trim() : '';
+
+        function showFeedback(msg, type) {
           if (formFeedbackNotice) {
-            formFeedbackNotice.textContent = "PLEASE COMPLETE ALL REQUIRED TRANSMISSION FIELDS.";
-            formFeedbackNotice.className = "form-feedback-notice error";
+            formFeedbackNotice.textContent = msg;
+            formFeedbackNotice.className = type ? `form-feedback-notice ${type}` : "form-feedback-notice";
           }
-          if (typeof playSyntheticClick === 'function') {
+          if (type === 'error' && typeof playSyntheticClick === 'function') {
             playSyntheticClick(280, 0.08, 'sawtooth');
           }
+        }
+
+        // Comprehensive validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!nameVal || nameVal.length < 2) {
+          showFeedback("PLEASE ENTER YOUR NAME (AT LEAST 2 CHARACTERS).", "error");
+          if (nameInput) nameInput.focus();
+          return;
+        }
+
+        if (!emailVal || !emailRegex.test(emailVal)) {
+          showFeedback("PLEASE ENTER A VALID EMAIL ADDRESS.", "error");
+          if (emailInput) emailInput.focus();
+          return;
+        }
+
+        if (!subjectVal || subjectVal.length < 2) {
+          showFeedback("PLEASE ENTER A SUBJECT FOR YOUR MESSAGE.", "error");
+          if (subjectInput) subjectInput.focus();
+          return;
+        }
+
+        if (!messageVal || messageVal.length < 5) {
+          showFeedback("PLEASE ENTER A MESSAGE (AT LEAST 5 CHARACTERS).", "error");
+          if (messageInput) messageInput.focus();
           return;
         }
 
@@ -2273,39 +2306,62 @@ document.addEventListener('DOMContentLoaded', () => {
         contactSubmitBtn.style.opacity = '0.75';
         const originalBtnHtml = contactSubmitBtn.innerHTML;
         contactSubmitBtn.innerHTML = `<span>Transmitting Message...</span>`;
+        showFeedback("TRANSMITTING TO SNEHA...", "");
         if (typeof playSyntheticClick === 'function') {
           playSyntheticClick(600, 0.05, 'sine');
         }
 
-        // Simulate secure dispatch handshake
-        setTimeout(() => {
+        if (hiddenReplyTo) hiddenReplyTo.value = emailVal;
+        if (hiddenFormSubject) hiddenFormSubject.value = `Portfolio Message from ${nameVal}: ${subjectVal}`;
+
+        // Payload for FormSubmit AJAX API
+        const payload = {
+          name: nameVal,
+          email: emailVal,
+          _replyto: emailVal,
+          subject: `[Portfolio Inquiry] ${subjectVal}`,
+          _subject: `New Portfolio Message from ${nameVal}: ${subjectVal}`,
+          message: messageVal,
+          _captcha: "false",
+          _template: "table"
+        };
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/sneha.amballa0804@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await response.json().catch(() => ({}));
+
+          if (response.ok || data.success === "true" || data.success === true) {
+            portfolioContactForm.reset();
+            showFeedback("✓ TRANSMISSION DISPATCHED // SNEHA WILL RESPOND SHORTLY", "success");
+            if (typeof playSyntheticClick === 'function') {
+              playSyntheticClick(880, 0.12, 'triangle');
+              setTimeout(() => playSyntheticClick(1100, 0.15, 'sine'), 100);
+            }
+            setTimeout(() => {
+              if (formFeedbackNotice) {
+                formFeedbackNotice.textContent = "";
+                formFeedbackNotice.className = "form-feedback-notice";
+              }
+            }, 7000);
+          } else {
+            throw new Error(data.message || "Dispatch error");
+          }
+        } catch (err) {
+          console.warn("Transmission error:", err);
+          showFeedback("TRANSMISSION FAILED // PLEASE EMAIL SNEHA.AMBALLA0804@GMAIL.COM DIRECTLY", "error");
+        } finally {
           contactSubmitBtn.disabled = false;
           contactSubmitBtn.style.opacity = '1';
           contactSubmitBtn.innerHTML = originalBtnHtml;
-
-          if (formFeedbackNotice) {
-            formFeedbackNotice.textContent = "✓ TRANSMISSION DISPATCHED // SNEHA WILL RESPOND SHORTLY";
-            formFeedbackNotice.className = "form-feedback-notice success";
-          }
-
-          if (typeof playSyntheticClick === 'function') {
-            playSyntheticClick(880, 0.12, 'triangle');
-            setTimeout(() => playSyntheticClick(1100, 0.15, 'sine'), 100);
-          }
-
-          // Mailto fallback link
-          const mailtoUri = `mailto:amballasneha25@gmail.com?subject=${encodeURIComponent(subjectInput.value || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Name: ${nameInput.value}\nEmail: ${emailInput.value}\n\nMessage:\n${messageInput.value}`)}`;
-          window.open(mailtoUri, '_blank');
-
-          portfolioContactForm.reset();
-
-          setTimeout(() => {
-            if (formFeedbackNotice) {
-              formFeedbackNotice.textContent = "";
-              formFeedbackNotice.className = "form-feedback-notice";
-            }
-          }, 6000);
-        }, 1000);
+        }
       });
     }
 
