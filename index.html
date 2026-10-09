@@ -1,0 +1,2916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneha Amballa — AI / ML & Software Engineer</title>
+  <meta name="description"
+    content="Award-level portfolio of Sneha Amballa — Creative AI/ML & Software Engineer building intelligent systems and useful digital products.">
+
+  <!-- Sleek Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23030303'/><circle cx='50' cy='50' r='18' fill='%23d4ff00'/><circle cx='50' cy='50' r='36' stroke='%238b5cf6' stroke-width='3' fill='none'/></svg>">
+
+  <!-- Primary Typography: Manrope (Refined, Modern Geometric Humanist) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loading">
+  <!-- Subtle SVG Grain Overlay -->
+  <svg class="noise-overlay" aria-hidden="true">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.035 0" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+  </svg>
+
+
+
+  <!-- ==========================================================================
+       SCENE 1: CINEMATIC BOOT VEIL (High-Tech Shutter)
+       ========================================================================== -->
+  <div class="boot-veil" id="bootVeil">
+    <div class="boot-veil-shutter shutter-top" id="shutterTop"></div>
+    <div class="boot-veil-shutter shutter-bottom" id="shutterBottom"></div>
+
+    <div class="boot-hud" id="bootHud">
+      <div class="hud-box">
+        <div class="hud-corners">
+          <span class="c-dot tl"></span>
+          <span class="c-dot tr"></span>
+          <span class="c-dot bl"></span>
+          <span class="c-dot br"></span>
+        </div>
+
+        <div class="hud-meta">
+          <span class="hud-code">[PROTOCOL: SNEHA.INIT]</span>
+          <span class="hud-pct" id="bootCounter">00%</span>
+        </div>
+
+        <div class="hud-status" id="bootStatus">ESTABLISHING QUANTUM LINK...</div>
+
+        <div class="hud-laser-track">
+          <div class="hud-laser-fill" id="progressBar"></div>
+        </div>
+
+        <div class="hud-sub-tags">
+          <span class="hud-tag" id="tagAI">NEURAL_AI</span>
+          <span class="hud-divider">/</span>
+          <span class="hud-tag" id="tagData">DATA_FABRIC</span>
+          <span class="hud-divider">/</span>
+          <span class="hud-tag" id="tagSoftware">SOFTWARE_CORE</span>
+        </div>
+
+        <div class="hud-skip-row">
+          <button class="boot-skip-btn" id="bootSkipBtn" title="Skip Intro (Esc)">
+            <span>SKIP INTRO [ESC]</span>
+            <span class="skip-arrow">➔</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       3D THREE.JS WEBGL CANVAS (Fluid Holographic Particle Field)
+       ========================================================================== -->
+  <div id="webgl-container">
+    <canvas id="webgl-canvas"></canvas>
+  </div>
+
+  <!-- Custom Cinematic Magnetic Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ==========================================================================
+       FLOATING ARCHITECTURAL SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <a href="#homeSection" class="nav-brand">
+        <span class="brand-monogram">SA</span>
+        <div class="brand-text-col">
+          <span class="brand-first">SNEHA</span>
+          <span class="brand-last">AMBALLA</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#homeSection" class="nav-link active" data-target="homeSection">
+          <span class="nav-idx">01</span>
+          <span class="nav-txt">HOME</span>
+        </a>
+        <a href="#thinkingPipeline" class="nav-link" data-target="thinkingPipeline">
+          <span class="nav-idx">02</span>
+          <span class="nav-txt">THINKING</span>
+        </a>
+        <a href="#workSection" class="nav-link" data-target="workSection">
+          <span class="nav-idx">03</span>
+          <span class="nav-txt">PROJECTS</span>
+        </a>
+        <a href="#toolboxSection" class="nav-link" data-target="toolboxSection">
+          <span class="nav-idx">04</span>
+          <span class="nav-txt">TOOLBOX</span>
+        </a>
+        <a href="#achievementsSection" class="nav-link" data-target="achievementsSection">
+          <span class="nav-idx">05</span>
+          <span class="nav-txt">ACHIEVEMENTS</span>
+        </a>
+        <a href="#contactSection" class="nav-link" data-target="contactSection">
+          <span class="nav-idx">06</span>
+          <span class="nav-txt">CONTACT</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/Sneha-Amballa" target="_blank" rel="noopener noreferrer" class="nav-github-circle"
+          title="Sneha Amballa on GitHub" aria-label="GitHub Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- Top Hairline Scroll Progress Bar -->
+    <div class="scroll-progress-line" id="scrollProgressLine"></div>
+  </header>
+
+  <!-- ==========================================================================
+       SECTION 01 // HOME & THINKING (COMPLETE ART-DIRECTED HERO & PIPELINE)
+       ========================================================================== -->
+  <section class="home-hero-section" id="homeSection">
+    <!-- Subtle Ambient Glow Orbs -->
+    <div class="home-ambient-glow glow-top-right"></div>
+    <div class="home-ambient-glow glow-center-right"></div>
+    <div class="home-ambient-glow glow-bottom-left"></div>
+
+    <div class="home-viewport-container">
+
+      <!-- LEFT HERO EDITORIAL CONTENT -->
+      <div class="home-left-col">
+        <!-- Category Mono Tag -->
+        <div class="home-category-tag" id="homeCategoryTag">
+          <span class="category-prefix">//</span>
+          <span class="category-title">AI / ML</span>
+          <span class="category-bullet">•</span>
+          <span class="category-title">SOFTWARE</span>
+          <span class="category-bullet">•</span>
+          <span class="category-title">DATA</span>
+        </div>
+
+        <!-- Punchy Bold Headline -->
+        <h1 class="home-headline" id="homeHeadline">
+          <span class="headline-row">HI, I’M</span>
+          <span class="headline-row">SNEHA</span>
+          <span class="headline-row headline-highlight">
+            <span class="name-italic">AMBALLA</span><span class="name-period">.</span>
+          </span>
+        </h1>
+
+        <!-- Positioning Statement with Vertical Mint Bar -->
+        <div class="home-statement-wrap" id="homeStatement">
+          <div class="home-mint-bar"></div>
+          <p class="home-statement-text">
+            I build intelligent systems<br>that solve real-world problems.
+          </p>
+        </div>
+
+        <!-- Minimal Skill Tags / Pills -->
+        <div class="home-skill-pills" id="homeSkillPills">
+          <span class="skill-pill">
+            <span class="pill-dot"></span>
+            <span>AI / ML</span>
+          </span>
+          <span class="skill-pill">
+            <span class="pill-dot"></span>
+            <span>SOFTWARE ENGINEERING</span>
+          </span>
+          <span class="skill-pill">
+            <span class="pill-dot"></span>
+            <span>DATA</span>
+          </span>
+        </div>
+
+        <!-- Two Clean CTAs -->
+        <div class="home-cta-group" id="homeCtaGroup">
+          <a href="#workSection" class="home-btn-primary" id="homeExploreBtn">
+            <span>EXPLORE MY WORK</span>
+            <svg class="btn-arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+          <a href="#contactSection" class="home-btn-secondary" id="homeConnectBtn">
+            <span>LET’S CONNECT</span>
+            <svg class="btn-arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Refined Scroll Indicator -->
+        <div class="home-scroll-indicator" id="homeScrollIndicator">
+          <a href="#workSection" class="scroll-ind-link" aria-label="Scroll to explore">
+            <div class="scroll-mouse-icon">
+              <span class="mouse-wheel"></span>
+            </div>
+            <span class="scroll-ind-text">SCROLL TO EXPLORE</span>
+          </a>
+          <div class="scroll-indicator-stem"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT VISUALIZATION: IDEA → DATA → MODEL → SYSTEM → IMPACT -->
+      <div class="home-right-col" id="thinkingPipeline">
+        <div class="pipeline-visual-wrapper">
+
+          <!-- Background SVG for subtle orbital paths and background particles -->
+          <svg class="pipeline-canvas-svg" viewBox="0 0 680 720" preserveAspectRatio="none" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="neonSplineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00ffa3" stop-opacity="0.9" />
+                <stop offset="25%" stop-color="#22e3aa" stop-opacity="1" />
+                <stop offset="50%" stop-color="#00ffa3" stop-opacity="0.95" />
+                <stop offset="75%" stop-color="#2de2bd" stop-opacity="1" />
+                <stop offset="100%" stop-color="#00ffa3" stop-opacity="0.9" />
+              </linearGradient>
+              <!-- Refined, crisper laser aura filter (reduced glow) -->
+              <filter id="neonSplineGlow" x="-25%" y="-25%" width="150%" height="150%">
+                <feGaussianBlur stdDeviation="3.2" result="blur1" />
+                <feMerge>
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <!-- Refined subtle orb glow -->
+              <filter id="orbGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2.8" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Subtle Orbital Ellipses -->
+            <ellipse class="orbit-path orbit-1" cx="370" cy="360" rx="320" ry="240" transform="rotate(-8 370 360)" />
+            <ellipse class="orbit-path orbit-2" cx="370" cy="360" rx="260" ry="180" transform="rotate(18 370 360)" />
+
+            <!-- Vertical guide line above Tier 1 IDEA -->
+            <line x1="290" y1="15" x2="290" y2="90" stroke="#00ffa3" stroke-width="0.8" stroke-dasharray="2 4"
+              opacity="0.25" />
+            <path class="star-cross" d="M290 15 v-6 m0 3 h-3 m3 0 h3" stroke="#00ffa3" stroke-width="0.8"
+              opacity="0.5" />
+
+            <!-- Constellation Micro-Stars / Crosses (Subtle celestial texture) -->
+            <g class="pipeline-stars">
+              <path class="star-cross" d="M140 220 v-6 m0 3 h-3 m3 0 h3" stroke="#00ffa3" stroke-width="0.8"
+                opacity="0.3" />
+              <circle cx="210" cy="180" r="1.5" fill="#00ffa3" opacity="0.45" />
+              <circle cx="160" cy="460" r="1.2" fill="#00ffa3" opacity="0.3" />
+              <circle cx="560" cy="130" r="1.5" fill="#00ffa3" opacity="0.35" />
+              <circle cx="620" cy="410" r="1.2" fill="#00ffa3" opacity="0.3" />
+              <path class="star-cross" d="M570 380 v-6 m0 3 h-3 m3 0 h3" stroke="#00ffa3" stroke-width="0.8"
+                opacity="0.3" />
+              <circle cx="240" cy="540" r="1.5" fill="#00ffa3" opacity="0.35" />
+            </g>
+
+            <!-- Flowing Neon Spline River connecting all 5 platform orb centers -->
+            <!-- IDEA (290, 90) -> DATA (400, 230) -> MODEL (450, 370) -> SYSTEM (390, 510) -> IMPACT (270, 645) -->
+            <path class="neon-river-back"
+              d="M 290,90 C 290,170 400,150 400,230 C 400,305 450,295 450,370 C 450,445 390,435 390,510 C 390,580 270,575 270,645" />
+            <path class="neon-river-glow" filter="url(#neonSplineGlow)"
+              d="M 290,90 C 290,170 400,150 400,230 C 400,305 450,295 450,370 C 450,445 390,435 390,510 C 390,580 270,575 270,645" />
+            <path class="neon-river-core"
+              d="M 290,90 C 290,170 400,150 400,230 C 400,305 450,295 450,370 C 450,445 390,435 390,510 C 390,580 270,575 270,645" />
+
+            <!-- Flowing Pulses along Spline (SVG animated circles - crisp, restrained packets) -->
+            <circle class="river-pulse-dot dot-1" r="2.8" fill="#ffffff" filter="url(#orbGlow)">
+              <animateMotion
+                path="M 290,90 C 290,170 400,150 400,230 C 400,305 450,295 450,370 C 450,445 390,435 390,510 C 390,580 270,575 270,645"
+                dur="6s" repeatCount="indefinite" />
+            </circle>
+            <circle class="river-pulse-dot dot-2" r="2.4" fill="#00ffa3" filter="url(#orbGlow)">
+              <animateMotion
+                path="M 290,90 C 290,170 400,150 400,230 C 400,305 450,295 450,370 C 450,445 390,435 390,510 C 390,580 270,575 270,645"
+                dur="6s" begin="3s" repeatCount="indefinite" />
+            </circle>
+          </svg>
+
+          <!-- Interactive Movable Sparkles Field around Thinking (Restrained & Elegant) -->
+          <div class="thinking-sparkles-container" id="thinkingSparkles" aria-hidden="true">
+            <div class="thinking-sparkle sparkle-1" data-depth="0.06" style="--sp-x: 18%; --sp-y: 8%; --sp-size: 14px;"
+              title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="1">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path
+                    d="M12 0 C12 6.5 6.5 12 0 12 C6.5 12 12 17.5 12 24 C12 17.5 17.5 12 24 12 C17.5 12 12 6.5 12 0 Z"
+                    fill="#ffffff" />
+                  <circle cx="12" cy="12" r="2.2" fill="#00ffa3" />
+                </svg>
+              </div>
+            </div>
+            <div class="thinking-sparkle sparkle-2" data-depth="-0.08"
+              style="--sp-x: 82%; --sp-y: 16%; --sp-size: 11px;" title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="2">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path
+                    d="M12 2 C12 7.5 7.5 12 2 12 C7.5 12 12 16.5 12 22 C12 16.5 16.5 12 22 12 C16.5 12 12 7.5 12 2 Z"
+                    fill="#00ffa3" />
+                  <circle cx="12" cy="12" r="1.8" fill="#ffffff" />
+                </svg>
+              </div>
+            </div>
+            <div class="thinking-sparkle sparkle-3" data-depth="0.09" style="--sp-x: 9%; --sp-y: 43%; --sp-size: 12px;"
+              title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="3">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path
+                    d="M12 0 C12 6.5 6.5 12 0 12 C6.5 12 12 17.5 12 24 C12 17.5 17.5 12 24 12 C17.5 12 12 6.5 12 0 Z"
+                    fill="#00ffa3" />
+                  <circle cx="12" cy="12" r="2" fill="#ffffff" />
+                </svg>
+              </div>
+            </div>
+            <div class="thinking-sparkle sparkle-4" data-depth="-0.05"
+              style="--sp-x: 90%; --sp-y: 53%; --sp-size: 15px;" title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="4">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path
+                    d="M12 0 C12 6.5 6.5 12 0 12 C6.5 12 12 17.5 12 24 C12 17.5 17.5 12 24 12 C17.5 12 12 6.5 12 0 Z"
+                    fill="#ffffff" />
+                  <circle cx="12" cy="12" r="2.5" fill="#00ffa3" />
+                </svg>
+              </div>
+            </div>
+            <div class="thinking-sparkle sparkle-5" data-depth="0.05" style="--sp-x: 27%; --sp-y: 35%; --sp-size: 10px;"
+              title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="5">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path d="M12 3 C12 8 8 12 3 12 C8 12 12 16 12 21 C12 16 16 12 21 12 C16 12 12 8 12 3 Z"
+                    fill="#00ffa3" />
+                  <circle cx="12" cy="12" r="1.5" fill="#ffffff" />
+                </svg>
+              </div>
+            </div>
+            <div class="thinking-sparkle sparkle-6" data-depth="-0.07"
+              style="--sp-x: 16%; --sp-y: 77%; --sp-size: 13px;" title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="6">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path
+                    d="M12 0 C12 6.5 6.5 12 0 12 C6.5 12 12 17.5 12 24 C12 17.5 17.5 12 24 12 C17.5 12 12 6.5 12 0 Z"
+                    fill="#00ffa3" />
+                  <circle cx="12" cy="12" r="2" fill="#ffffff" />
+                </svg>
+              </div>
+            </div>
+            <div class="thinking-sparkle sparkle-7" data-depth="0.07" style="--sp-x: 77%; --sp-y: 85%; --sp-size: 12px;"
+              title="Thinking Sparkle">
+              <div class="sparkle-inner" data-float="7">
+                <svg viewBox="0 0 24 24" class="sparkle-shape">
+                  <path
+                    d="M12 2 C12 7.5 7.5 12 2 12 C7.5 12 12 16.5 12 22 C12 16.5 16.5 12 22 12 C16.5 12 12 7.5 12 2 Z"
+                    fill="#ffffff" />
+                  <circle cx="12" cy="12" r="2.2" fill="#00ffa3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 Stepped Isometric Glass Discs with Orbs & Labels -->
+          <div class="pipeline-tiers-container">
+
+            <!-- TIER 1: IDEA -->
+            <div class="pipeline-tier tier-1" style="--tier-x-pct: 42.647%; --tier-y-pct: 12.5%;" data-stage="idea">
+              <div class="glass-disc-wrap">
+                <div class="glass-disc">
+                  <div class="disc-glow-ring"></div>
+                  <div class="disc-spokes"></div>
+                </div>
+                <div class="disc-orb">
+                  <div class="orb-core"></div>
+                </div>
+              </div>
+              <div class="tier-lead-line"></div>
+              <div class="tier-info-card">
+                <div class="tier-header">
+                  <svg class="tier-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M9 18h6m-4 4h2m-5-8.5a6.5 6.5 0 118 0c-.5.5-1 1.5-1 2.5H10c0-1-.5-2-1-2.5z" />
+                  </svg>
+                  <span class="tier-name">IDEA</span>
+                </div>
+                <div class="tier-desc">
+                  <span>Curiosity</span>
+                  <span>Real-world problems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIER 2: DATA -->
+            <div class="pipeline-tier tier-2" style="--tier-x-pct: 58.824%; --tier-y-pct: 31.944%;" data-stage="data">
+              <div class="glass-disc-wrap">
+                <div class="glass-disc">
+                  <div class="disc-glow-ring"></div>
+                  <div class="disc-spokes"></div>
+                </div>
+                <div class="disc-orb">
+                  <div class="orb-core"></div>
+                </div>
+              </div>
+              <div class="tier-lead-line"></div>
+              <div class="tier-info-card">
+                <div class="tier-header">
+                  <svg class="tier-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <ellipse cx="12" cy="5" rx="8" ry="3" />
+                    <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+                    <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+                  </svg>
+                  <span class="tier-name">DATA</span>
+                </div>
+                <div class="tier-desc">
+                  <span>Collect</span>
+                  <span>Find patterns</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIER 3: MODEL -->
+            <div class="pipeline-tier tier-3" style="--tier-x-pct: 66.176%; --tier-y-pct: 51.389%;" data-stage="model">
+              <div class="glass-disc-wrap">
+                <div class="glass-disc">
+                  <div class="disc-glow-ring"></div>
+                  <div class="disc-spokes"></div>
+                </div>
+                <div class="disc-orb">
+                  <div class="orb-core"></div>
+                </div>
+              </div>
+              <div class="tier-lead-line"></div>
+              <div class="tier-info-card">
+                <div class="tier-header">
+                  <svg class="tier-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                  <span class="tier-name">MODEL</span>
+                </div>
+                <div class="tier-desc">
+                  <span>Build</span>
+                  <span>Experiment</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIER 4: SYSTEM -->
+            <div class="pipeline-tier tier-4" style="--tier-x-pct: 57.353%; --tier-y-pct: 70.833%;" data-stage="system">
+              <div class="glass-disc-wrap">
+                <div class="glass-disc">
+                  <div class="disc-glow-ring"></div>
+                  <div class="disc-spokes"></div>
+                </div>
+                <div class="disc-orb">
+                  <div class="orb-core"></div>
+                </div>
+              </div>
+              <div class="tier-lead-line"></div>
+              <div class="tier-info-card">
+                <div class="tier-header">
+                  <svg class="tier-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                  </svg>
+                  <span class="tier-name">SYSTEM</span>
+                </div>
+                <div class="tier-desc">
+                  <span>Deploy</span>
+                  <span>Integrate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIER 5: IMPACT -->
+            <div class="pipeline-tier tier-5" style="--tier-x-pct: 39.706%; --tier-y-pct: 89.583%;" data-stage="impact">
+              <div class="glass-disc-wrap">
+                <div class="glass-disc">
+                  <div class="disc-glow-ring"></div>
+                  <div class="disc-spokes"></div>
+                </div>
+                <div class="disc-orb">
+                  <div class="orb-core"></div>
+                </div>
+              </div>
+              <div class="tier-lead-line"></div>
+              <div class="tier-info-card">
+                <div class="tier-header">
+                  <svg class="tier-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                  </svg>
+                  <span class="tier-name">IMPACT</span>
+                </div>
+                <div class="tier-desc">
+                  <span>Solve problems</span>
+                  <span>Create real value</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ==========================================================================
+       SECTION 03 // SELECTED WORK (EXPANSIVE CASE STUDY DECK & SPOTLIGHT)
+       ========================================================================== -->
+  <section class="work-section" id="workSection">
+
+    <!-- Section Opening Header -->
+    <div class="work-header">
+      <div class="work-tag-left">
+        <span class="work-num">03</span>
+        <span class="work-slash">/</span>
+        <span class="work-label">SELECTED WORK</span>
+      </div>
+      <div class="work-header-divider">
+        <div class="work-header-line" id="workHeaderLine"></div>
+      </div>
+      <div class="work-tag-right">
+        <span class="work-concept">SYSTEM ARCHITECTURE &amp; PRODUCTION ENGINEERING</span>
+      </div>
+    </div>
+
+    <!-- Section Intro & Interactive Control Deck -->
+    <div class="work-intro-block">
+      <div class="work-intro-left">
+        <h2 class="work-headline">Selected Engineering Work</h2>
+      </div>
+
+      <!-- Control Bar: Domain Filter Pills + Horizontal Rail Navigation Controls -->
+      <div class="work-toolbar-row">
+        <!-- Category Filter Pills -->
+        <div class="work-category-filters" id="workCategoryFilters" role="tablist"
+          aria-label="Filter Projects by Domain">
+          <button class="work-filter-pill active" data-filter="all" role="tab" aria-selected="true">
+            <span class="w-filter-dot"></span>
+            <span class="w-filter-name">ALL SYSTEMS</span>
+            <span class="w-filter-count">03</span>
+          </button>
+          <button class="work-filter-pill" data-filter="civic" role="tab" aria-selected="false">
+            <span class="w-filter-dot"></span>
+            <span class="w-filter-name">CIVIC PLATFORM</span>
+            <span class="w-filter-count">01</span>
+          </button>
+          <button class="work-filter-pill" data-filter="rag" role="tab" aria-selected="false">
+            <span class="w-filter-dot"></span>
+            <span class="w-filter-name">HYBRID RAG</span>
+            <span class="w-filter-count">01</span>
+          </button>
+          <button class="work-filter-pill" data-filter="nl2sql" role="tab" aria-selected="false">
+            <span class="w-filter-dot"></span>
+            <span class="w-filter-name">TEXT-TO-SQL</span>
+            <span class="w-filter-count">01</span>
+          </button>
+        </div>
+
+        <!-- Horizontal Rail Navigation Controls & Panorama Tabs -->
+        <div class="work-panorama-controls" id="workPanoramaControls">
+          <div class="panorama-tabs" role="tablist" aria-label="Project Selection">
+            <button class="panorama-tab-btn active" data-index="0" aria-selected="true">
+              <span class="p-tab-dot"></span>
+              <span class="p-tab-num">01</span>
+              <span class="p-tab-name">CIVIC PLATFORM</span>
+            </button>
+            <button class="panorama-tab-btn" data-index="1" aria-selected="false">
+              <span class="p-tab-dot"></span>
+              <span class="p-tab-num">02</span>
+              <span class="p-tab-name">DOCUMIND RAG</span>
+            </button>
+            <button class="panorama-tab-btn" data-index="2" aria-selected="false">
+              <span class="p-tab-dot"></span>
+              <span class="p-tab-num">03</span>
+              <span class="p-tab-name">NL TO SQL</span>
+            </button>
+          </div>
+
+          <div class="panorama-nav-arrows">
+            <button class="panorama-arrow-btn" id="workPrevBtn" aria-label="Previous Project" title="Previous Project">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div class="showcase-progress-indicator">
+              <div class="showcase-progress-bar">
+                <div class="showcase-progress-fill" id="workProgressFill" style="width: 33.33%;"></div>
+              </div>
+              <div class="panorama-status-badge">
+                <span class="badge-index" id="workCurrentIndex">01</span>
+                <span class="badge-sep">/</span>
+                <span class="badge-total">03</span>
+              </div>
+            </div>
+            <button class="panorama-arrow-btn" id="workNextBtn" aria-label="Next Project" title="Next Project">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ambient Dynamic Glow Backdrop that shifts with active project -->
+    <div class="work-ambient-glow" id="workAmbientGlow"></div>
+
+    <!-- Horizontal Showcase Track Container with Floating Nav Arrows -->
+    <div class="project-showcase-viewport" id="projectShowcaseViewport">
+      <button class="track-floating-arrow arrow-left" id="workTrackPrevBtn" aria-label="Scroll Projects Left"
+        title="Previous Project">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      <div class="project-showcase-track project-cards-list" id="projectShowcaseTrack" tabindex="0" role="region"
+        aria-label="Horizontal Projects Rail">
+
+        <!-- ==================================================================
+             PROJECT 01: AI-Powered Civic Issue Management Platform
+             ================================================================== -->
+        <article class="project-card project-slide-card" id="project1" data-project-idx="0" data-domain="civic">
+          <div class="card-spotlight"></div>
+          <div class="card-mesh-pattern"></div>
+
+          <!-- Card Top Visual Preview Stage -->
+          <div class="card-visual-stage">
+            <div class="console-top-bar">
+              <div class="console-window-dots">
+                <span class="cw-dot dot-red"></span>
+                <span class="cw-dot dot-yellow"></span>
+                <span class="cw-dot dot-green"></span>
+              </div>
+              <button class="console-zoom-trigger open-blueprint-lightbox-btn" data-project-id="project1"
+                title="Inspect Full Blueprint">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polyline points="15 3 21 3 21 9" />
+                  <polyline points="9 21 3 21 3 15" />
+                  <line x1="21" y1="3" x2="14" y2="10" />
+                  <line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+                <span>ENLARGE</span>
+              </button>
+            </div>
+            <div class="console-image-canvas open-blueprint-lightbox-btn" data-project-id="project1" role="button"
+              tabindex="0" title="Click to enlarge architecture flow diagram">
+              <img src="assets/images/cropped-Civic Issue Reporting System Flow.png"
+                alt="AI-Powered Civic Issue Management Platform Flow Diagram" class="project-flow-img"
+                loading="eager" />
+              <div class="canvas-hover-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>FlowChart</span>
+              </div>
+            </div>
+            <div class="console-bottom-bar">
+              <div class="c-telem-left">
+                <span class="c-pulse-pip"></span>
+                <span class="c-telem-label">CITIZEN ➔ AI ROUTING ➔ DISPATCH ➔ RESOLUTION</span>
+              </div>
+              <span class="c-telem-mode">MUNICIPAL WORKFLOW</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="card-content-body">
+            <div class="project-card-header-bar">
+              <div class="project-meta-badges">
+                <span class="project-index-badge">SYS-01</span>
+                <span class="project-domain-tag">CIVIC / PLATFORM SYSTEMS</span>
+                <span class="project-status-beacon"><span class="beacon-dot"></span>DEPLOYED RBAC</span>
+              </div>
+              <a href="https://github.com/Sneha-Amballa/smart-civic-issue-reporting" target="_blank" rel="noopener noreferrer"
+                class="project-icon-link" title="Source Code on GitHub" aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+
+            <h3 class="project-title-large">
+              <span class="p-title-main">AI-Powered Civic Issue Management Platform</span>
+            </h3>
+            <p class="project-summary-text">
+              A full-stack platform for reporting and managing civic issues, featuring role-based workflows and
+              AI-powered issue categorization and spam screening.
+            </p>
+
+            <div class="project-stack-wrap">
+              <div class="project-stack-tags">
+                <span class="tech-tag"><i class="tech-dot"></i>React</span>
+                <span class="tech-tag"><i class="tech-dot"></i>Node.js</span>
+                <span class="tech-tag"><i class="tech-dot"></i>Express</span>
+                <span class="tech-tag"><i class="tech-dot"></i>PostgreSQL</span>
+                <span class="tech-tag"><i class="tech-dot"></i>FastAPI</span>
+              </div>
+            </div>
+
+            <div class="project-cta-row">
+              <button class="card-btn-blueprint open-blueprint-lightbox-btn" data-project-id="project1"
+                title="View high-resolution system flow diagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>FlowChart</span>
+              </button>
+              <a href="https://github.com/Sneha-Amballa/smart-civic-issue-reporting.git" target="_blank"
+                rel="noopener noreferrer" class="card-btn-secondary" title="View Source on GitHub">
+                <span>GitHub</span>
+                <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.4">
+                  <path d="M7 17L17 7H7M17 7V17" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================================================================
+             PROJECT 02: DocuMind — Multi-PDF RAG Assistant
+             ================================================================== -->
+        <article class="project-card project-slide-card" id="project2" data-project-idx="1" data-domain="rag">
+          <div class="card-spotlight"></div>
+          <div class="card-mesh-pattern"></div>
+
+          <!-- Card Top Visual Preview Stage -->
+          <div class="card-visual-stage">
+            <div class="console-top-bar">
+              <div class="console-window-dots">
+                <span class="cw-dot dot-red"></span>
+                <span class="cw-dot dot-yellow"></span>
+                <span class="cw-dot dot-green"></span>
+              </div>
+              <button class="console-zoom-trigger open-blueprint-lightbox-btn" data-project-id="project2"
+                title="Inspect Full Blueprint">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polyline points="15 3 21 3 21 9" />
+                  <polyline points="9 21 3 21 3 15" />
+                  <line x1="21" y1="3" x2="14" y2="10" />
+                  <line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+                <span>ENLARGE</span>
+              </button>
+            </div>
+            <div class="console-image-canvas open-blueprint-lightbox-btn" data-project-id="project2" role="button"
+              tabindex="0" title="Click to enlarge architecture flow diagram">
+              <img src="assets/images/cropped-DocuMind.png"
+                alt="DocuMind Multi-PDF Research RAG Assistant Architecture Diagram" class="project-flow-img"
+                loading="lazy" />
+              <div class="canvas-hover-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>FlowChart</span>
+              </div>
+            </div>
+            <div class="console-bottom-bar">
+              <div class="c-telem-left">
+                <span class="c-pulse-pip"></span>
+                <span class="c-telem-label">EXTRACT ➔ DENSE+BM25 ➔ RRF ➔ LLM</span>
+              </div>
+              <span class="c-telem-mode">HYBRID RAG</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="card-content-body">
+            <div class="project-card-header-bar">
+              <div class="project-meta-badges">
+                <span class="project-index-badge">SYS-02</span>
+                <span class="project-domain-tag">AI / HYBRID RAG</span>
+                <span class="project-status-beacon"><span class="beacon-dot"></span>HYBRID FUSED</span>
+              </div>
+              <a href="https://github.com/Sneha-Amballa/DocuMind" target="_blank" rel="noopener noreferrer"
+                class="project-icon-link" title="Source Code on GitHub" aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+
+            <h3 class="project-title-large">
+              <span class="p-title-main">DocuMind — Multi-PDF RAG Assistant</span>
+            </h3>
+            <p class="project-summary-text">
+              An AI research assistant that answers questions from multiple PDFs using hybrid semantic and keyword
+              retrieval for relevant, grounded responses.
+            </p>
+
+            <div class="project-stack-wrap">
+              <div class="project-stack-tags">
+                <span class="tech-tag"><i class="tech-dot"></i>Python</span>
+                <span class="tech-tag"><i class="tech-dot"></i>Streamlit</span>
+                <span class="tech-tag"><i class="tech-dot"></i>FAISS</span>
+                <span class="tech-tag"><i class="tech-dot"></i>BM25</span>
+                <span class="tech-tag"><i class="tech-dot"></i>Groq</span>
+              </div>
+            </div>
+
+            <div class="project-cta-row">
+              <button class="card-btn-blueprint open-blueprint-lightbox-btn" data-project-id="project2"
+                title="View high-resolution system flow diagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>FlowChart</span>
+              </button>
+              <a href="https://github.com/Sneha-Amballa/DocuMind" target="_blank" rel="noopener noreferrer"
+                class="card-btn-secondary" title="View Source on GitHub">
+                <span>GitHub</span>
+                <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.4">
+                  <path d="M7 17L17 7H7M17 7V17" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================================================================
+             PROJECT 03: Natural Language to SQL Agent
+             ================================================================== -->
+        <article class="project-card project-slide-card" id="project3" data-project-idx="2" data-domain="nl2sql">
+          <div class="card-spotlight"></div>
+          <div class="card-mesh-pattern"></div>
+
+          <!-- Card Top Visual Preview Stage -->
+          <div class="card-visual-stage">
+            <div class="console-top-bar">
+              <div class="console-window-dots">
+                <span class="cw-dot dot-red"></span>
+                <span class="cw-dot dot-yellow"></span>
+                <span class="cw-dot dot-green"></span>
+              </div>
+              <button class="console-zoom-trigger open-blueprint-lightbox-btn" data-project-id="project3"
+                title="Inspect Full Blueprint">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polyline points="15 3 21 3 21 9" />
+                  <polyline points="9 21 3 21 3 15" />
+                  <line x1="21" y1="3" x2="14" y2="10" />
+                  <line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+                <span>ENLARGE</span>
+              </button>
+            </div>
+            <div class="console-image-canvas open-blueprint-lightbox-btn" data-project-id="project3" role="button"
+              tabindex="0" title="Click to enlarge architecture flow diagram">
+              <img src="assets/images/cropped-project-nl2sql-flow.png"
+                alt="Natural Language to SQL System Architecture Flow Diagram" class="project-flow-img"
+                loading="lazy" />
+              <div class="canvas-hover-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>FlowChart</span>
+              </div>
+            </div>
+            <div class="console-bottom-bar">
+              <div class="c-telem-left">
+                <span class="c-pulse-pip"></span>
+                <span class="c-telem-label">NL ➔ LLM ➔ AST ➔ SQLITE</span>
+              </div>
+              <span class="c-telem-mode">DETERMINISTIC</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="card-content-body">
+            <div class="project-card-header-bar">
+              <div class="project-meta-badges">
+                <span class="project-index-badge">SYS-03</span>
+                <span class="project-domain-tag">AI / DATA SYSTEMS</span>
+                <span class="project-status-beacon"><span class="beacon-dot"></span>AST SANITIZED</span>
+              </div>
+              <a href="https://github.com/Sneha-Amballa/Natural_Language_to_SQL" target="_blank"
+                rel="noopener noreferrer" class="project-icon-link" title="Source Code on GitHub"
+                aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+
+            <h3 class="project-title-large">
+              <span class="p-title-main">Natural Language to SQL Agent</span>
+            </h3>
+            <p class="project-summary-text">
+              An AI-powered application that converts natural-language questions into SQL queries, validates them for
+              safety, and displays database results with visualizations.
+            </p>
+
+            <div class="project-stack-wrap">
+              <div class="project-stack-tags">
+                <span class="tech-tag"><i class="tech-dot"></i>Python</span>
+                <span class="tech-tag"><i class="tech-dot"></i>Streamlit</span>
+                <span class="tech-tag"><i class="tech-dot"></i>SQLite</span>
+                <span class="tech-tag"><i class="tech-dot"></i>Groq</span>
+                <span class="tech-tag"><i class="tech-dot"></i>SQLGlot</span>
+              </div>
+            </div>
+
+            <div class="project-cta-row">
+              <button class="card-btn-blueprint open-blueprint-lightbox-btn" data-project-id="project3"
+                title="View high-resolution system flow diagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>FlowChart</span>
+              </button>
+              <a href="https://github.com/Sneha-Amballa/Natural_Language_to_SQL" target="_blank" rel="noopener noreferrer"
+                class="card-btn-secondary" title="View Source on GitHub">
+                <span>GitHub</span>
+                <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.4">
+                  <path d="M7 17L17 7H7M17 7V17" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="track-floating-arrow arrow-right" id="workTrackNextBtn" aria-label="Scroll Projects Right"
+        title="Next Project">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- ==================================================================
+         SYSTEM ARCHITECTURE DEEP-DIVE MODAL (Comprehensive Specs)
+         ================================================================== -->
+    <div class="system-arch-modal-overlay" id="systemArchModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="system-arch-modal-backdrop" id="modalBackdrop"></div>
+      <div class="system-arch-modal-container">
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Architecture Modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="modal-inner-scroll">
+          <div class="modal-header-section">
+            <div class="modal-meta-row">
+              <span class="modal-tag" id="modalTag">AI TEXT-TO-SQL</span>
+              <span class="modal-index" id="modalIndex">SYS-01</span>
+            </div>
+            <h3 class="modal-title" id="modalTitle">Natural Language to SQL</h3>
+            <p class="modal-subtitle" id="modalSubtitle">Deterministic SQL generation pipeline with AST query
+              sanitization and self-healing agent loop.</p>
+          </div>
+
+          <div class="modal-flow-wrapper">
+            <div class="modal-section-heading">SYSTEM TOPOLOGY &amp; DATAFLOW PIPELINE</div>
+            <div class="modal-topology-box" id="modalTopology">
+              <!-- Injected dynamically via JS depending on project -->
+            </div>
+          </div>
+
+          <!-- Modal Diagram Preview -->
+          <div class="modal-diagram-preview-wrap">
+            <div class="modal-section-heading">ARCHITECTURE FLOW BLUEPRINT</div>
+            <div class="modal-diagram-img-box" id="modalDiagramBox">
+              <img src="assets/images/cropped-project-nl2sql-flow.png" id="modalDiagramImg"
+                alt="System Flow Architecture" />
+            </div>
+          </div>
+
+          <div class="modal-grid-details">
+            <div class="modal-column">
+              <div class="modal-section-heading">ARCHITECTURAL HIGHLIGHTS &amp; SAFETY GUARANTEES</div>
+              <ul class="modal-bullet-list" id="modalHighlights">
+                <!-- Injected dynamically -->
+              </ul>
+            </div>
+            <div class="modal-column">
+              <div class="modal-section-heading">ENGINEERING BENCHMARKS &amp; METRICS</div>
+              <div class="modal-benchmarks-grid" id="modalBenchmarks">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer-action">
+            <a href="https://github.com/Sneha-Amballa" target="_blank" rel="noopener noreferrer" class="modal-github-cta"
+              id="modalGithubLink">
+              <span>EXPLORE REPOSITORY ON GITHUB</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================
+         HIGH-RESOLUTION ARCHITECTURE BLUEPRINT LIGHTBOX MODAL
+         ================================================================== -->
+    <div class="blueprint-lightbox-overlay" id="blueprintLightboxModal" aria-hidden="true" role="dialog"
+      aria-modal="true">
+      <div class="blueprint-lightbox-backdrop" id="blueprintLightboxBackdrop"></div>
+      <div class="blueprint-lightbox-container">
+        <div class="blueprint-lightbox-header">
+          <div class="bl-header-left">
+            <span class="bl-system-code" id="blSystemCode">SYS-01</span>
+            <span class="bl-system-title" id="blSystemTitle">AI-Powered Civic Issue Management Platform</span>
+          </div>
+          <div class="bl-header-actions">
+            <div class="bl-project-switchers">
+              <button class="bl-switch-btn active" data-switch="project1">01 CIVIC</button>
+              <button class="bl-switch-btn" data-switch="project2">02 DOCUMIND</button>
+              <button class="bl-switch-btn" data-switch="project3">03 NL-SQL</button>
+            </div>
+            <button class="blueprint-lightbox-close" id="blueprintLightboxCloseBtn"
+              aria-label="Close Architecture Lightbox">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="blueprint-lightbox-body">
+          <div class="bl-image-canvas">
+            <img src="assets/images/cropped-Civic Issue Reporting System Flow.png" id="blModalImg"
+              alt="System Architecture Blueprint High-Resolution Flow" />
+          </div>
+        </div>
+        <div class="blueprint-lightbox-footer">
+          <span class="bl-footer-note">HIGH-RESOLUTION SYSTEM TOPOLOGY // PRESS ESC TO CLOSE</span>
+          <a href="https://github.com/Sneha-Amballa/smart-civic-issue-reporting" target="_blank"
+            rel="noopener noreferrer" class="bl-footer-link" id="blGithubLink">
+            <span>VIEW CODE REPOSITORY</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 04 // TOOLBOX (TECHNOLOGIES I WORK WITH)
+       ========================================================================== -->
+  <section class="toolbox-section" id="toolboxSection">
+
+    <!-- Section Opening Header -->
+    <div class="toolbox-header">
+      <div class="toolbox-tag-left">
+        <span class="toolbox-num">04</span>
+        <span class="toolbox-slash">/</span>
+        <span class="toolbox-label">TOOLBOX</span>
+      </div>
+      <div class="toolbox-header-divider">
+        <div class="toolbox-header-line" id="toolboxHeaderLine"></div>
+      </div>
+      <div class="toolbox-tag-right">
+        <span class="toolbox-concept">TOOLBOX</span>
+      </div>
+    </div>
+
+    <!-- Section Intro Block: Moderate Heading + Single Supporting Line & Filter Tabs -->
+    <div class="toolbox-intro-block">
+      <div class="toolbox-intro-left">
+        <h2 class="toolbox-headline">Tools I Work With</h2>
+      </div>
+
+      <!-- Interactive Category Filter Navigation Bar -->
+      <div class="toolbox-filter-nav" id="toolboxFilterNav" role="tablist" aria-label="Technology Filter">
+        <button class="toolbox-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          <span class="filter-dot"></span>
+          <span class="filter-txt">ALL DOMAINS</span>
+          <span class="filter-count">22</span>
+        </button>
+        <button class="toolbox-filter-btn" data-filter="languages" role="tab" aria-selected="false">
+          <span class="filter-dot"></span>
+          <span class="filter-txt">LANGUAGES</span>
+          <span class="filter-count">03</span>
+        </button>
+        <button class="toolbox-filter-btn" data-filter="aiml" role="tab" aria-selected="false">
+          <span class="filter-dot"></span>
+          <span class="filter-txt">AI / ML</span>
+          <span class="filter-count">08</span>
+        </button>
+        <button class="toolbox-filter-btn" data-filter="development" role="tab" aria-selected="false">
+          <span class="filter-dot"></span>
+          <span class="filter-txt">DEVELOPMENT</span>
+          <span class="filter-count">04</span>
+        </button>
+        <button class="toolbox-filter-btn" data-filter="databases" role="tab" aria-selected="false">
+          <span class="filter-dot"></span>
+          <span class="filter-txt">DATABASES</span>
+          <span class="filter-count">03</span>
+        </button>
+        <button class="toolbox-filter-btn" data-filter="tools" role="tab" aria-selected="false">
+          <span class="filter-dot"></span>
+          <span class="filter-txt">TOOLS</span>
+          <span class="filter-count">04</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Panoramic 3-Column Ecosystem Layout -->
+    <div class="toolbox-main-layout">
+
+      <!-- LEFT COLUMN: CARDS 01 & 02 -->
+      <div class="toolbox-col toolbox-col-left">
+
+        <!-- CARD 01: LANGUAGES -->
+        <div class="toolbox-card" id="cardLanguages" data-domain="languages">
+          <!-- Cyber Corner Marks -->
+          <div class="card-corners">
+            <span class="c-dot tl"></span>
+            <span class="c-dot tr"></span>
+            <span class="c-dot bl"></span>
+            <span class="c-dot br"></span>
+          </div>
+
+          <div class="card-head">
+            <div class="card-title-group">
+              <span class="card-bracket">⟨</span>
+              <span class="card-title">LANGUAGES</span>
+              <span class="card-bracket">⟩</span>
+            </div>
+            <div class="card-meta-right">
+              <span class="card-status-dot" title="Operational"></span>
+              <span class="card-idx">01</span>
+            </div>
+          </div>
+
+          <div class="card-items-grid grid-3-cols">
+            <!-- Python -->
+            <div class="tech-item" data-tech="Python" data-category="Core Language"
+              data-desc="AI/ML, Data Systems &amp; Automation" data-accent="#387EB8">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <path fill="url(#python-g1)"
+                    d="M63.5 12.3c-24.8 0-23.2 10.7-23.2 10.7l.1 11.1h23.7v3.4H30.8S16.5 35.8 16.5 60.8s12.5 24.1 12.5 24.1h7.5v-10.7s-.4-12.8 12.5-12.8h21.4s11.9.2 11.9-11.6V24s1.8-11.7-18.8-11.7zm-12.7 7.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6z" />
+                  <path fill="url(#python-g2)"
+                    d="M64.5 115.7c24.8 0 23.2-10.7 23.2-10.7l-.1-11.1H63.9v-3.4h33.3s14.3 1.7 14.3-23.3-12.5-24.1-12.5-24.1h-7.5v10.7s.4 12.8-12.5 12.8H40.1s-11.9-.2-11.9 11.6V104s-1.8 11.7 18.8 11.7zm12.7-7.2a3.8 3.8 0 1 1 0-7.6 3.8 3.8 0 0 1 0 7.6z" />
+                  <defs>
+                    <linearGradient id="python-g1" x1="16.5" y1="12.3" x2="76" y2="48" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#387EB8" />
+                      <stop offset="1" stop-color="#366994" />
+                    </linearGradient>
+                    <linearGradient id="python-g2" x1="51.5" y1="80" x2="111.5" y2="115.7"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFE873" />
+                      <stop offset="1" stop-color="#FFD43B" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="tech-name">Python</span>
+            </div>
+
+
+            <!-- JavaScript -->
+            <div class="tech-item" data-tech="JavaScript" data-category="Web Core"
+              data-desc="Interactive Frontends &amp; Asynchronous Logic" data-accent="#F7DF1E">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <rect width="112" height="112" x="8" y="8" rx="14" fill="#F7DF1E" />
+                  <path fill="#000"
+                    d="M68 83.5c1.5 2.6 3.6 4.4 7.4 4.4 3.8 0 6.3-1.9 6.3-4.5 0-3.2-2.5-4.3-6.8-6.2-6.2-2.6-10.2-6-10.2-12.5 0-6.3 4.8-11 12.3-11 5.4 0 9.2 2.1 11.8 6.7l-5.8 3.7c-1.3-2.3-3-3.3-5.9-3.3-2.8 0-4.8 1.7-4.8 4 0 2.8 1.9 3.8 6.2 5.6 7 3 10.9 6.2 10.9 13.2 0 7.5-6 11.6-13.9 11.6-7.8 0-13-3.7-15.5-8.6l6.1-3.1zm-30.7 0c1.4 2.3 2.7 4.1 5.8 4.1 3 0 4.9-1.3 4.9-6.2V54.1h7.8v27.6c0 9.1-5.3 13.2-13.2 13.2-7 0-11.2-3.7-13.3-8.3l8-3.1z" />
+                </svg>
+              </div>
+              <span class="tech-name">JavaScript</span>
+            </div>
+
+            <!-- SQL -->
+            <div class="tech-item" data-tech="SQL" data-category="Data Querying"
+              data-desc="Relational Modeling &amp; Complex Analytical Queries" data-accent="#38BDF8">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <ellipse cx="64" cy="30" rx="38" ry="14" fill="#38BDF8" />
+                  <path d="M26 30v22c0 7.7 17 14 38 14s38-6.3 38-14V30" fill="none" stroke="#00e599" stroke-width="5" />
+                  <ellipse cx="64" cy="52" rx="38" ry="14" fill="#0284C7" fill-opacity="0.4" />
+                  <path d="M26 52v22c0 7.7 17 14 38 14s38-6.3 38-14V52" fill="none" stroke="#38BDF8" stroke-width="5" />
+                  <ellipse cx="64" cy="74" rx="38" ry="14" fill="#0369A1" fill-opacity="0.5" />
+                  <path d="M26 74v22c0 7.7 17 14 38 14s38-6.3 38-14V74" fill="none" stroke="#38BDF8" stroke-width="5" />
+                  <ellipse cx="64" cy="30" rx="38" ry="14" fill="#7DD3FC" stroke="#BAE6FD" stroke-width="2" />
+                </svg>
+              </div>
+              <span class="tech-name">SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 02: AI / ML -->
+        <div class="toolbox-card" id="cardAIML" data-domain="aiml">
+          <!-- Cyber Corner Marks -->
+          <div class="card-corners">
+            <span class="c-dot tl"></span>
+            <span class="c-dot tr"></span>
+            <span class="c-dot bl"></span>
+            <span class="c-dot br"></span>
+          </div>
+
+          <div class="card-head">
+            <div class="card-title-group">
+              <span class="card-bracket">⟨</span>
+              <span class="card-title">AI / ML</span>
+              <span class="card-bracket">⟩</span>
+            </div>
+            <div class="card-meta-right">
+              <span class="card-status-dot" title="Operational"></span>
+              <span class="card-idx">02</span>
+            </div>
+          </div>
+
+          <div class="card-items-grid grid-4-cols-2-rows">
+            <!-- Machine Learning (TensorFlow) -->
+            <div class="tech-item" data-tech="Machine Learning" data-category="Intelligence"
+              data-desc="Supervised/Unsupervised Modeling &amp; TF" data-accent="#FF9800">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <polygon points="64,14 110,40 110,92 64,118 18,92 18,40" fill="#E65100" />
+                  <polygon points="64,20 104,43 64,66 24,43" fill="#FF9800" />
+                  <polygon points="64,66 104,43 104,89 64,112" fill="#F57C00" />
+                  <polygon points="24,43 64,66 64,112 24,89" fill="#E65100" />
+                  <text x="64" y="80" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="44"
+                    fill="#FFFFFF" text-anchor="middle">TF</text>
+                </svg>
+              </div>
+              <span class="tech-name">Machine<br>Learning</span>
+            </div>
+
+            <!-- LLMs -->
+            <div class="tech-item" data-tech="LLMs" data-category="Generative AI"
+              data-desc="Foundation Models, Prompt Engineering &amp; Eval" data-accent="#00E599">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="50" fill="#141E1C" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+                  <g fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M64 36c-8 0-14 5-14 12v12l10 6 14-8V44c0-4-4-8-10-8z" />
+                    <path d="M43 49c-4 7-2 15 3 18l10 6v-12l10-6-10-6c-6-3-11-2-13 0z" />
+                    <path d="M43 79c4 7 12 9 17 6l10-6-6-10-10-6-8 5c-3 5-4 9-3 11z" />
+                    <path d="M64 92c8 0 14-5 14-12V68l-10-6-14 8v14c0 4 4 8 10 8z" />
+                    <path d="M85 79c4-7 2-15-3-18l-10-6v12l-10 6 10 6c6 3 11 2 13 0z" />
+                    <path d="M85 49c-4-7-12-9-17-6l-10 6 6 10 10 6 8-5c3-5 4-9 3-11z" />
+                  </g>
+                </svg>
+              </div>
+              <span class="tech-name">LLMs</span>
+            </div>
+
+            <!-- RAG -->
+            <div class="tech-item" data-tech="RAG" data-category="Knowledge Retrieval"
+              data-desc="Vector Databases &amp; Semantic Context Search" data-accent="#00e599">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#062822" stroke="#00e599" stroke-width="2"
+                    stroke-opacity="0.4" />
+                  <g fill="none" stroke="#00e599" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M44 54l-8 8a14 14 0 0 0 20 20l8-8" />
+                    <path d="M84 74l8-8a14 14 0 0 0-20-20l-8 8" />
+                    <line x1="52" y1="76" x2="76" y2="52" />
+                  </g>
+                </svg>
+              </div>
+              <span class="tech-name">RAG</span>
+            </div>
+
+            <!-- Pandas -->
+            <div class="tech-item" data-tech="Pandas" data-category="Data Analytics"
+              data-desc="High-Performance DataFrame Operations" data-accent="#E70488">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#150E28" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+                  <rect x="36" y="32" width="10" height="34" rx="5" fill="#130654" />
+                  <rect x="36" y="72" width="10" height="24" rx="5" fill="#FF4B4B" />
+                  <rect x="52" y="44" width="10" height="52" rx="5" fill="#E70488" />
+                  <rect x="68" y="28" width="10" height="52" rx="5" fill="#FFD13B" />
+                  <rect x="84" y="48" width="10" height="48" rx="5" fill="#00C9FF" />
+                </svg>
+              </div>
+              <span class="tech-name">Pandas</span>
+            </div>
+
+            <!-- NumPy -->
+            <div class="tech-item" data-tech="NumPy" data-category="Computing"
+              data-desc="Vectorized N-Dimensional Tensor Math" data-accent="#4DABCF">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <polygon points="64,18 106,42 64,66 22,42" fill="#4DABCF" />
+                  <polygon points="64,66 106,42 106,90 64,114" fill="#013243" />
+                  <polygon points="22,42 64,66 64,114 22,90" fill="#246083" />
+                  <text x="64" y="76" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="34"
+                    fill="#FFFFFF" text-anchor="middle">NP</text>
+                </svg>
+              </div>
+              <span class="tech-name">NumPy</span>
+            </div>
+
+            <!-- Scikit-learn -->
+            <div class="tech-item" data-tech="Scikit-learn" data-category="Applied ML"
+              data-desc="Classification, Regression &amp; ML Pipelines" data-accent="#F89939">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#101824" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+                  <circle cx="48" cy="52" r="14" fill="#F89939" />
+                  <circle cx="80" cy="76" r="14" fill="#3499CD" />
+                  <circle cx="80" cy="52" r="9" fill="#F89939" fill-opacity="0.8" />
+                  <circle cx="48" cy="76" r="9" fill="#3499CD" fill-opacity="0.8" />
+                  <path d="M48 52c16 0 16 24 32 24" fill="none" stroke="#FFFFFF" stroke-width="3"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+              <span class="tech-name">Scikit-learn</span>
+            </div>
+
+            <!-- Data Analysis -->
+            <div class="tech-item" data-tech="Data Analysis" data-category="Analytics"
+              data-desc="Exploratory EDA &amp; Statistical Modeling" data-accent="#38BDF8">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#0C1B2E" stroke="rgba(56,189,248,0.2)" stroke-width="2" />
+                  <rect x="36" y="66" width="14" height="28" rx="3" fill="#38BDF8" />
+                  <rect x="57" y="48" width="14" height="46" rx="3" fill="#0284C7" />
+                  <rect x="78" y="32" width="14" height="62" rx="3" fill="#00e599" />
+                </svg>
+              </div>
+              <span class="tech-name">Data<br>Analysis</span>
+            </div>
+
+            <!-- Visualization -->
+            <div class="tech-item" data-tech="Visualization" data-category="Storytelling"
+              data-desc="Interactive Visual Insights &amp; Plots" data-accent="#E8762D">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#161824" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+                  <rect x="61" y="24" width="6" height="80" rx="3" fill="#E8762D" />
+                  <rect x="24" y="61" width="80" height="6" rx="3" fill="#E5453E" />
+                  <rect x="42" y="38" width="5" height="52" rx="2.5" fill="#5C87A5" />
+                  <rect x="38" y="42" width="52" height="5" rx="2.5" fill="#1F455B" />
+                  <rect x="81" y="38" width="5" height="52" rx="2.5" fill="#7B933D" />
+                  <circle cx="64" cy="64" r="5" fill="#F2C12E" />
+                </svg>
+              </div>
+              <span class="tech-name">Visualization</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CENTER COLUMN: ORBITAL ECOSYSTEM & BOTTOM METRICS -->
+      <div class="toolbox-col toolbox-col-center">
+
+        <!-- Interactive 3D Orbital Network Stage -->
+        <div class="orbital-ecosystem" id="orbitalEcosystem">
+
+          <!-- Background Ambient Nebula Glow -->
+          <div class="orbital-ambient-glow"></div>
+
+          <svg class="orbital-svg" id="orbitalSvg" viewBox="0 0 660 600">
+            <defs>
+              <!-- Radial Core Gradient for Sneha Sphere -->
+              <radialGradient id="snehaCoreGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00e599" stop-opacity="0.95" />
+                <stop offset="30%" stop-color="#059669" stop-opacity="0.8" />
+                <stop offset="70%" stop-color="#070a09" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#022c22" stop-opacity="0" />
+              </radialGradient>
+
+              <!-- Pedestal Top Gradient -->
+              <linearGradient id="pedestalTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00e599" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#00e599" stop-opacity="0.12" />
+              </linearGradient>
+
+              <!-- Pedestal Face Left -->
+              <linearGradient id="pedestalFaceL" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#064e3b" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#021c15" stop-opacity="0.95" />
+              </linearGradient>
+
+              <!-- Pedestal Face Right -->
+              <linearGradient id="pedestalFaceR" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(0, 229, 153, 0.35)" stop-opacity="0.75" />
+                <stop offset="100%" stop-color="#02261d" stop-opacity="0.95" />
+              </linearGradient>
+
+              <!-- Glow Filter -->
+              <filter id="emeraldGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              <!-- Stronger Glow for Center Core -->
+              <filter id="coreGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="8" result="blur1" />
+                <feGaussianBlur stdDeviation="3" result="blur2" />
+                <feMerge>
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="blur2" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              <!-- Radar Sweep Gradient -->
+              <linearGradient id="radarSweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00e599" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#00e599" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+
+            <!-- Subtle Orbital Web Constellation & Trajectory Rings -->
+            <g class="orbit-tracks-group">
+              <!-- Outermost Orbital Ring -->
+              <ellipse cx="330" cy="285" rx="245" ry="195" class="orbit-ellipse ring-outer" />
+              <!-- Middle Orbital Ring -->
+              <ellipse cx="330" cy="285" rx="175" ry="140" class="orbit-ellipse ring-middle" />
+              <!-- Inner Orbital Ring -->
+              <ellipse cx="330" cy="285" rx="110" ry="85" class="orbit-ellipse ring-inner" />
+
+              <!-- Cross Orbital Dashed Ellipses for 3D depth -->
+              <ellipse cx="330" cy="285" rx="220" ry="120" transform="rotate(-15 330 285)"
+                class="orbit-ellipse ring-tilted" />
+              <ellipse cx="330" cy="285" rx="190" ry="160" transform="rotate(25 330 285)"
+                class="orbit-ellipse ring-tilted-2" />
+
+              <!-- Luminous Energy Conduits / Connecting Beams from Core to Pedestals -->
+              <g class="orbit-conduits-group">
+                <!-- AI / ML (Top: 330, 95) -->
+                <line x1="330" y1="235" x2="330" y2="155" class="conduit-line conduit-aiml" id="conduitAIML" />
+                <!-- DEVELOPMENT (Top-Right: 500, 190) -->
+                <line x1="368" y1="258" x2="455" y2="210" class="conduit-line conduit-development" id="conduitDev" />
+                <!-- TOOLS (Bottom-Right: 470, 395) -->
+                <line x1="365" y1="312" x2="435" y2="355" class="conduit-line conduit-tools" id="conduitTools" />
+                <!-- DATABASES (Bottom-Left: 190, 395) -->
+                <line x1="295" y1="312" x2="225" y2="355" class="conduit-line conduit-databases"
+                  id="conduitDatabases" />
+                <!-- DATA / LANGUAGES (Top-Left: 160, 190) -->
+                <line x1="292" y1="258" x2="205" y2="210" class="conduit-line conduit-languages"
+                  id="conduitLanguages" />
+              </g>
+
+              <!-- Interconnecting Constellation Web linking the 5 Pedestals (as in reference Image 2) -->
+              <polygon points="330,95 500,190 470,395 190,395 160,190" fill="none" stroke="rgba(0, 229, 153, 0.22)"
+                stroke-width="1.2" stroke-dasharray="4 4" class="constellation-web" />
+            </g>
+
+            <!-- 5 ISOMETRIC 3D GLASS PEDESTALS (MATCHING REFERENCE IMAGE 2) -->
+
+            <!-- Pedestal 1: AI / ML (Top Center: 330, 95) -->
+            <g class="pedestal-anchor" transform="translate(330, 95)">
+              <g class="pedestal-group node-aiml" data-domain="aiml" data-target-card="cardAIML">
+                <!-- Ground Halo -->
+                <ellipse cx="0" cy="50" rx="42" ry="13" fill="#00e599" fill-opacity="0.22" filter="url(#emeraldGlow)" />
+                <!-- 3D Pillar Body Faces -->
+                <polygon points="0,-46 38,-25 0,-4 -38,-25" fill="url(#pedestalTopGrad)" stroke="#00e599"
+                  stroke-width="1.8" />
+                <polygon points="-38,-25 0,-4 0,44 -38,23" fill="url(#pedestalFaceL)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <polygon points="0,-4 38,-25 38,23 0,44" fill="url(#pedestalFaceR)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <!-- Glass Shield Plate -->
+                <rect x="-32" y="-6" width="64" height="48" rx="8" fill="rgba(3, 20, 16, 0.75)"
+                  stroke="rgba(0, 229, 153, 0.3)" stroke-width="1" />
+                <!-- Hovering Hologram Diamond on Roof -->
+                <g class="ped-roof-holo" transform="translate(0, -38)">
+                  <polygon points="0,-9 13,-3 0,3 -13,-3" fill="none" stroke="#00e599" stroke-width="1.3"
+                    filter="url(#emeraldGlow)" />
+                  <circle cx="0" cy="-3" r="2" fill="#FFFFFF" />
+                </g>
+                <!-- Brain Icon -->
+                <g transform="translate(0, 8)" stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M -2 -13 C -7 -13, -12 -10, -12 -4 C -12 -1, -14 2, -14 5 C -14 9, -10 11, -6 11 C -4 11, -2 10, -2 8 Z" />
+                  <path d="M -2 -6 C -5 -6, -8 -4, -7 0" />
+                  <path d="M -7 3 C -5 3, -4 5, -2 5" />
+                  <path
+                    d="M 2 -13 C 7 -13, 12 -10, 12 -4 C 12 -1, 14 2, 14 5 C 14 9, 10 11, 6 11 C 4 11, 2 10, 2 8 Z" />
+                  <path d="M 2 -6 C 5 -6, 8 -4, 7 0" />
+                  <path d="M 7 3 C 5 3, 4 5, 2 5" />
+                </g>
+                <!-- Label -->
+                <text x="0" y="32" class="pedestal-label" text-anchor="middle">AI / ML</text>
+              </g>
+            </g>
+
+            <!-- Pedestal 2: DEVELOPMENT (Top-Right: 500, 190) -->
+            <g class="pedestal-anchor" transform="translate(500, 190)">
+              <g class="pedestal-group node-development" data-domain="development" data-target-card="cardDevelopment">
+                <!-- Ground Halo -->
+                <ellipse cx="0" cy="50" rx="42" ry="13" fill="#00e599" fill-opacity="0.22" filter="url(#emeraldGlow)" />
+                <!-- 3D Pillar Body Faces -->
+                <polygon points="0,-46 38,-25 0,-4 -38,-25" fill="url(#pedestalTopGrad)" stroke="#00e599"
+                  stroke-width="1.8" />
+                <polygon points="-38,-25 0,-4 0,44 -38,23" fill="url(#pedestalFaceL)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <polygon points="0,-4 38,-25 38,23 0,44" fill="url(#pedestalFaceR)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <!-- Glass Shield Plate -->
+                <rect x="-32" y="-6" width="64" height="48" rx="8" fill="rgba(3, 20, 16, 0.75)"
+                  stroke="rgba(0, 229, 153, 0.3)" stroke-width="1" />
+                <!-- Hovering Hologram Diamond on Roof -->
+                <g class="ped-roof-holo" transform="translate(0, -38)">
+                  <polygon points="0,-9 13,-3 0,3 -13,-3" fill="none" stroke="#00e599" stroke-width="1.3"
+                    filter="url(#emeraldGlow)" />
+                  <circle cx="0" cy="-3" r="2" fill="#FFFFFF" />
+                </g>
+                <!-- Code </> Icon -->
+                <g transform="translate(0, 8)" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="-8,-6 -14,0 -8,6" />
+                  <polyline points="8,-6 14,0 8,6" />
+                  <line x1="-3" y1="8" x2="3" y2="-8" stroke="#00e599" />
+                </g>
+                <!-- Label -->
+                <text x="0" y="32" class="pedestal-label" text-anchor="middle">DEVELOPMENT</text>
+              </g>
+            </g>
+
+            <!-- Pedestal 3: TOOLS (Bottom-Right: 470, 395) -->
+            <g class="pedestal-anchor" transform="translate(470, 395)">
+              <g class="pedestal-group node-tools" data-domain="tools" data-target-card="cardTools">
+                <!-- Ground Halo -->
+                <ellipse cx="0" cy="50" rx="42" ry="13" fill="#00e599" fill-opacity="0.22" filter="url(#emeraldGlow)" />
+                <!-- 3D Pillar Body Faces -->
+                <polygon points="0,-46 38,-25 0,-4 -38,-25" fill="url(#pedestalTopGrad)" stroke="#00e599"
+                  stroke-width="1.8" />
+                <polygon points="-38,-25 0,-4 0,44 -38,23" fill="url(#pedestalFaceL)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <polygon points="0,-4 38,-25 38,23 0,44" fill="url(#pedestalFaceR)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <!-- Glass Shield Plate -->
+                <rect x="-32" y="-6" width="64" height="48" rx="8" fill="rgba(3, 20, 16, 0.75)"
+                  stroke="rgba(0, 229, 153, 0.3)" stroke-width="1" />
+                <!-- Hovering Hologram Diamond on Roof -->
+                <g class="ped-roof-holo" transform="translate(0, -38)">
+                  <polygon points="0,-9 13,-3 0,3 -13,-3" fill="none" stroke="#00e599" stroke-width="1.3"
+                    filter="url(#emeraldGlow)" />
+                  <circle cx="0" cy="-3" r="2" fill="#FFFFFF" />
+                </g>
+                <!-- Gear / Cog Icon -->
+                <g transform="translate(0, 8)" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round">
+                  <circle cx="0" cy="0" r="4.5" stroke="#00e599" stroke-width="2" />
+                  <path
+                    d="M 0 -11 v 2.5 M 0 8.5 v 2.5 M -11 0 h 2.5 M 8.5 0 h 2.5 M -8 -8 l 2 2 M 6 6 l 2 2 M -8 8 l 2 -2 M 6 -6 l 2 -2" />
+                  <circle cx="0" cy="0" r="9" stroke-width="1.5" />
+                </g>
+                <!-- Label -->
+                <text x="0" y="32" class="pedestal-label" text-anchor="middle">TOOLS</text>
+              </g>
+            </g>
+
+            <!-- Pedestal 4: DATABASES (Bottom-Left: 190, 395) -->
+            <g class="pedestal-anchor" transform="translate(190, 395)">
+              <g class="pedestal-group node-databases" data-domain="databases" data-target-card="cardDatabases">
+                <!-- Ground Halo -->
+                <ellipse cx="0" cy="50" rx="42" ry="13" fill="#00e599" fill-opacity="0.22" filter="url(#emeraldGlow)" />
+                <!-- 3D Pillar Body Faces -->
+                <polygon points="0,-46 38,-25 0,-4 -38,-25" fill="url(#pedestalTopGrad)" stroke="#00e599"
+                  stroke-width="1.8" />
+                <polygon points="-38,-25 0,-4 0,44 -38,23" fill="url(#pedestalFaceL)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <polygon points="0,-4 38,-25 38,23 0,44" fill="url(#pedestalFaceR)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <!-- Glass Shield Plate -->
+                <rect x="-32" y="-6" width="64" height="48" rx="8" fill="rgba(3, 20, 16, 0.75)"
+                  stroke="rgba(0, 229, 153, 0.3)" stroke-width="1" />
+                <!-- Hovering Hologram Diamond on Roof -->
+                <g class="ped-roof-holo" transform="translate(0, -38)">
+                  <polygon points="0,-9 13,-3 0,3 -13,-3" fill="none" stroke="#00e599" stroke-width="1.3"
+                    filter="url(#emeraldGlow)" />
+                  <circle cx="0" cy="-3" r="2" fill="#FFFFFF" />
+                </g>
+                <!-- Database Cylinders Icon -->
+                <g transform="translate(0, 8)" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <ellipse cx="0" cy="-8" rx="11" ry="3.8" fill="#00e599" fill-opacity="0.22" />
+                  <path d="M -11 -8 v 5.5 c 0 2.2 4.9 3.8 11 3.8 s 11 -1.6 11 -3.8 v -5.5" />
+                  <path d="M -11 -2 v 5.5 c 0 2.2 4.9 3.8 11 3.8 s 11 -1.6 11 -3.8 v -5.5" />
+                  <path d="M -11 4 v 5.5 c 0 2.2 4.9 3.8 11 3.8 s 11 -1.6 11 -3.8 v -5.5" />
+                </g>
+                <!-- Label -->
+                <text x="0" y="32" class="pedestal-label" text-anchor="middle">DATABASES</text>
+              </g>
+            </g>
+
+            <!-- Pedestal 5: DATA / LANGUAGES (Top-Left: 160, 190) -->
+            <g class="pedestal-anchor" transform="translate(160, 190)">
+              <g class="pedestal-group node-languages node-data" data-domain="languages"
+                data-target-card="cardLanguages">
+                <!-- Ground Halo -->
+                <ellipse cx="0" cy="50" rx="42" ry="13" fill="#00e599" fill-opacity="0.22" filter="url(#emeraldGlow)" />
+                <!-- 3D Pillar Body Faces -->
+                <polygon points="0,-46 38,-25 0,-4 -38,-25" fill="url(#pedestalTopGrad)" stroke="#00e599"
+                  stroke-width="1.8" />
+                <polygon points="-38,-25 0,-4 0,44 -38,23" fill="url(#pedestalFaceL)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <polygon points="0,-4 38,-25 38,23 0,44" fill="url(#pedestalFaceR)" stroke="rgba(0,229,153,0.35)"
+                  stroke-width="1" />
+                <!-- Glass Shield Plate -->
+                <rect x="-32" y="-6" width="64" height="48" rx="8" fill="rgba(3, 20, 16, 0.75)"
+                  stroke="rgba(0, 229, 153, 0.3)" stroke-width="1" />
+                <!-- Hovering Hologram Diamond on Roof -->
+                <g class="ped-roof-holo" transform="translate(0, -38)">
+                  <polygon points="0,-9 13,-3 0,3 -13,-3" fill="none" stroke="#00e599" stroke-width="1.3"
+                    filter="url(#emeraldGlow)" />
+                  <circle cx="0" cy="-3" r="2" fill="#FFFFFF" />
+                </g>
+                <!-- Data Cylinders Icon (as in reference Image 2) -->
+                <g transform="translate(0, 8)" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <ellipse cx="0" cy="-8" rx="11" ry="3.8" fill="#00e599" fill-opacity="0.22" />
+                  <path d="M -11 -8 v 5.5 c 0 2.2 4.9 3.8 11 3.8 s 11 -1.6 11 -3.8 v -5.5" />
+                  <path d="M -11 -2 v 5.5 c 0 2.2 4.9 3.8 11 3.8 s 11 -1.6 11 -3.8 v -5.5" />
+                  <path d="M -11 4 v 5.5 c 0 2.2 4.9 3.8 11 3.8 s 11 -1.6 11 -3.8 v -5.5" />
+                </g>
+                <!-- Label: DATA -->
+                <text x="0" y="32" class="pedestal-label" text-anchor="middle">DATA</text>
+              </g>
+            </g>
+
+            <!-- CENTER CORE: SNEHA HOLOGRAPHIC GLOBE (MATCHING REFERENCE IMAGE 2) -->
+            <g class="core-anchor" transform="translate(330, 285)">
+              <g class="sneha-core-globe" id="snehaCoreGlobe">
+                <!-- Dynamic Expanding Shockwave Ring -->
+                <circle cx="0" cy="0" r="48" class="core-shockwave" id="coreShockwave" />
+
+                <!-- Ambient Halo Rings -->
+                <circle cx="0" cy="0" r="66" fill="none" stroke="#00e599" stroke-width="1" stroke-opacity="0.25"
+                  stroke-dasharray="4 4" class="core-halo-ring" />
+                <circle cx="0" cy="0" r="56" fill="none" stroke="#00e599" stroke-width="1.8" stroke-opacity="0.55"
+                  class="core-halo-pulse" filter="url(#emeraldGlow)" />
+
+                <!-- Core Solid Sphere Body with World Atmosphere Glow -->
+                <circle cx="0" cy="0" r="48" fill="#031f18" stroke="#00e599" stroke-width="2" filter="url(#coreGlow)" />
+                <circle cx="0" cy="0" r="48" fill="url(#snehaCoreGrad)" />
+
+                <!-- Holographic Continents (Earth Map) -->
+                <g class="globe-continents" fill="#00e599" fill-opacity="0.32" stroke="#00e599" stroke-width="0.8"
+                  stroke-opacity="0.5">
+                  <!-- Americas -->
+                  <path
+                    d="M -36 -18 C -32 -26, -24 -24, -20 -16 C -16 -10, -22 -4, -24 0 C -26 4, -20 14, -22 22 C -24 28, -28 24, -30 18 C -32 12, -26 8, -26 4 C -28 -2, -36 -10, -36 -18 Z" />
+                  <!-- Eurasia & Africa -->
+                  <path
+                    d="M -4 -22 C 6 -26, 18 -24, 25 -14 C 30 -8, 26 -2, 20 2 C 14 6, 20 14, 15 24 C 9 30, 2 26, 2 16 C 0 8, -6 3, -3 -4 C -2 -12, -10 -16, -4 -22 Z" />
+                  <!-- Australia -->
+                  <path d="M 22 15 C 28 13, 34 17, 32 23 C 28 26, 20 24, 22 15 Z" />
+                </g>
+
+                <!-- Wireframe Latitude & Longitude Grids -->
+                <g class="core-wireframe" fill="none" stroke="#00e599" stroke-width="1" stroke-opacity="0.45"
+                  stroke-dasharray="3 3">
+                  <line x1="-48" y1="0" x2="48" y2="0" />
+                  <ellipse cx="0" cy="0" rx="48" ry="16" />
+                  <ellipse cx="0" cy="0" rx="48" ry="32" />
+                  <line x1="0" y1="-48" x2="0" y2="48" />
+                  <ellipse cx="0" cy="0" rx="19" ry="48" />
+                  <ellipse cx="0" cy="0" rx="35" ry="48" />
+                </g>
+
+                <!-- Top Starburst Flare where vertical conduit joins Core -->
+                <g class="core-top-flare" transform="translate(0, -48)">
+                  <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" filter="url(#emeraldGlow)" />
+                  <line x1="-8" y1="0" x2="8" y2="0" stroke="#00e599" stroke-width="1.5" />
+                  <line x1="0" y1="-8" x2="0" y2="8" stroke="#00e599" stroke-width="1.5" />
+                </g>
+
+                <!-- Central Name 'SNEHA' (Bold Futuristic Clean Typography) -->
+                <text x="0" y="6" class="core-name-text" text-anchor="middle" filter="url(#emeraldGlow)">SNEHA</text>
+              </g>
+            </g>
+
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: CARDS 03, 04, 05 -->
+      <div class="toolbox-col toolbox-col-right">
+
+        <!-- CARD 03: DEVELOPMENT -->
+        <div class="toolbox-card" id="cardDevelopment" data-domain="development">
+          <!-- Cyber Corner Marks -->
+          <div class="card-corners">
+            <span class="c-dot tl"></span>
+            <span class="c-dot tr"></span>
+            <span class="c-dot bl"></span>
+            <span class="c-dot br"></span>
+          </div>
+
+          <div class="card-head">
+            <div class="card-title-group">
+              <span class="card-bracket">⟨</span>
+              <span class="card-title">DEVELOPMENT</span>
+              <span class="card-bracket">⟩</span>
+            </div>
+            <div class="card-meta-right">
+              <span class="card-status-dot" title="Operational"></span>
+              <span class="card-idx">03</span>
+            </div>
+          </div>
+
+          <div class="card-items-grid grid-4-cols">
+            <!-- React -->
+            <div class="tech-item" data-tech="React" data-category="Frontend"
+              data-desc="Modern Reactive Component Architectures" data-accent="#61DAFB">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <ellipse cx="64" cy="64" rx="46" ry="16" fill="none" stroke="#61DAFB" stroke-width="4.5" />
+                  <ellipse cx="64" cy="64" rx="46" ry="16" transform="rotate(60 64 64)" fill="none" stroke="#61DAFB"
+                    stroke-width="4.5" />
+                  <ellipse cx="64" cy="64" rx="46" ry="16" transform="rotate(120 64 64)" fill="none" stroke="#61DAFB"
+                    stroke-width="4.5" />
+                  <circle cx="64" cy="64" r="7.5" fill="#61DAFB" />
+                </svg>
+              </div>
+              <span class="tech-name">React</span>
+            </div>
+
+            <!-- Node.js -->
+            <div class="tech-item" data-tech="Node.js" data-category="Backend Runtime"
+              data-desc="Event-Driven High-Concurrency Services" data-accent="#339933">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <polygon points="64,16 108,41 108,91 64,116 20,91 20,41" fill="#339933" />
+                  <text x="64" y="74" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="36"
+                    fill="#FFFFFF" text-anchor="middle">JS</text>
+                </svg>
+              </div>
+              <span class="tech-name">Node.js</span>
+            </div>
+
+            <!-- FastAPI -->
+            <div class="tech-item" data-tech="FastAPI" data-category="Python API"
+              data-desc="Asynchronous High-Throughput REST APIs" data-accent="#009688">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#009688" />
+                  <path d="M68 28l-24 40h18l-8 32 30-44H66z" fill="#FFFFFF" />
+                </svg>
+              </div>
+              <span class="tech-name">FastAPI</span>
+            </div>
+
+            <!-- Express -->
+            <div class="tech-item" data-tech="Express" data-category="Node Framework"
+              data-desc="Lightweight Web Services &amp; Middleware" data-accent="#A3E635">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#1C1C1E" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+                  <text x="64" y="74" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="38"
+                    fill="#FFFFFF" text-anchor="middle">ex</text>
+                </svg>
+              </div>
+              <span class="tech-name">Express</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 04: DATABASES -->
+        <div class="toolbox-card" id="cardDatabases" data-domain="databases">
+          <!-- Cyber Corner Marks -->
+          <div class="card-corners">
+            <span class="c-dot tl"></span>
+            <span class="c-dot tr"></span>
+            <span class="c-dot bl"></span>
+            <span class="c-dot br"></span>
+          </div>
+
+          <div class="card-head">
+            <div class="card-title-group">
+              <span class="card-bracket">⟨</span>
+              <span class="card-title">DATABASES</span>
+              <span class="card-bracket">⟩</span>
+            </div>
+            <div class="card-meta-right">
+              <span class="card-status-dot" title="Operational"></span>
+              <span class="card-idx">04</span>
+            </div>
+          </div>
+
+          <div class="card-items-grid grid-3-cols">
+            <!-- PostgreSQL -->
+            <div class="tech-item" data-tech="PostgreSQL" data-category="Relational DB"
+              data-desc="ACID Compliance, Indexing &amp; Optimization" data-accent="#336791">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <path
+                    d="M72 16c-17 0-32 10-37 25-2 0-4-.2-6-.2-12 0-21 8-21 19 0 8 5 15 13 18v28h12v-17c4 2 8 3 13 3 6 0 11-1.5 16-4.5 4 3 9 4.5 15 4.5 18 0 32-15 32-34 0-22-16-40-37-42zm-35 34c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5S37 53 37 50zm29 36c-9 0-16-7-16-16h8c0 4.5 3.5 8 8 8v8zm8-18c-3 0-5-2-5-5s2-5 5-5 5 2 5 5-2 5-5 5z"
+                    fill="#336791" />
+                  <path d="M42.5 47c-1.5 0-2.5 1-2.5 2.5s1 2.5 2.5 2.5 2.5-1 2.5-2.5-1-2.5-2.5-2.5z" fill="#FFF" />
+                </svg>
+              </div>
+              <span class="tech-name">PostgreSQL</span>
+            </div>
+
+            <!-- MongoDB -->
+            <div class="tech-item" data-tech="MongoDB" data-category="NoSQL Database"
+              data-desc="Flexible Document Stores &amp; Aggregations" data-accent="#47A248">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <path d="M64 12c-1.5 1.5-24 24-24 53 0 21 14 39 30 46 2-7 4-15 4-22V12z" fill="#47A248" />
+                  <path d="M64 12c1.5 1.5 24 24 24 53 0 21-14 39-30 46-2-7-4-15-4-22V12z" fill="#499D4A" />
+                  <path d="M64 74c-1.5 0-3 5-3 9 0 9 3 16 3 16s3-7 3-16c0-4-1.5-9-3-9z" fill="#FFF" />
+                </svg>
+              </div>
+              <span class="tech-name">MongoDB</span>
+            </div>
+
+            <!-- MySQL -->
+            <div class="tech-item" data-tech="MySQL" data-category="Relational DB"
+              data-desc="Structured Data Management &amp; Persistence" data-accent="#F29111">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <path
+                    d="M104 56c-16-16-36-18-52-7-12 8-18 21-20 34-1 6 1 13 6 17 5 4 13 4 18 0 6-5 12-11 20-16 10-5 22-6 32-1 4 2 9 0 11-4 3-4 3-10-2-14l-13-9z"
+                    fill="#00758F" />
+                  <path d="M38 90c-7 0-12 6-13 12-1 6 1 11 5 13 4 4 14 1 18-4 4-5 3-14-3-18-2-2-5-3-7-3z"
+                    fill="#F29111" />
+                </svg>
+              </div>
+              <span class="tech-name">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 05: TOOLS & OTHERS -->
+        <div class="toolbox-card" id="cardTools" data-domain="tools">
+          <!-- Cyber Corner Marks -->
+          <div class="card-corners">
+            <span class="c-dot tl"></span>
+            <span class="c-dot tr"></span>
+            <span class="c-dot bl"></span>
+            <span class="c-dot br"></span>
+          </div>
+
+          <div class="card-head">
+            <div class="card-title-group">
+              <span class="card-bracket">⟨</span>
+              <span class="card-title">TOOLS</span>
+              <span class="card-bracket">⟩</span>
+            </div>
+            <div class="card-meta-right">
+              <span class="card-status-dot" title="Operational"></span>
+              <span class="card-idx">05</span>
+            </div>
+          </div>
+
+          <div class="card-items-grid grid-4-cols">
+            <!-- Git -->
+            <div class="tech-item" data-tech="Git" data-category="Version Control"
+              data-desc="Distributed VCS &amp; Git Branching Workflows" data-accent="#F05032">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <rect x="24" y="24" width="80" height="80" rx="14" transform="rotate(45 64 64)" fill="#F05032" />
+                  <circle cx="50" cy="50" r="7" fill="#FFFFFF" />
+                  <circle cx="78" cy="50" r="7" fill="#FFFFFF" />
+                  <circle cx="78" cy="78" r="7" fill="#FFFFFF" />
+                  <path d="M50 50h14a14 14 0 0 1 14 14v14M78 50v28" fill="none" stroke="#FFFFFF" stroke-width="5"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+              <span class="tech-name">Git</span>
+            </div>
+
+            <!-- GitHub -->
+            <div class="tech-item" data-tech="GitHub" data-category="Collaboration"
+              data-desc="CI/CD Actions, Code Review &amp; Collaboration" data-accent="#E2E8F0">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#181717" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+                  <path fill="#FFFFFF" fill-rule="evenodd"
+                    d="M64 28c-19.9 0-36 16.1-36 36 0 15.9 10.3 29.4 24.6 34.2 1.8.3 2.5-.8 2.5-1.7v-6.6c-10 2.2-12.1-4.3-12.1-4.3-1.6-4.1-4-5.2-4-5.2-3.3-2.2.2-2.2.2-2.2 3.6.3 5.5 3.7 5.5 3.7 3.2 5.5 8.4 3.9 10.5 3 .3-2.3 1.2-3.9 2.3-4.8-8-0.9-16.4-4-16.4-17.8 0-3.9 1.4-7.1 3.7-9.6-.4-.9-1.6-4.6.4-9.5 0 0 3-.9 9.9 3.7 2.9-.8 5.9-1.2 9-1.2s6.1.4 9 1.2c6.8-4.6 9.8-3.7 9.8-3.7 2 4.9.8 8.6.4 9.5 2.3 2.5 3.7 5.7 3.7 9.6 0 13.8-8.4 16.9-16.5 17.8 1.3 1.1 2.4 3.3 2.4 6.7v9.9c0 1 .7 2.1 2.5 1.7C91.7 93.4 102 79.9 102 64c0-19.9-16.1-36-36-36z" />
+                </svg>
+              </div>
+              <span class="tech-name">GitHub</span>
+            </div>
+
+            <!-- Postman -->
+            <div class="tech-item" data-tech="Postman" data-category="API Testing"
+              data-desc="API Testing, Automated Suites &amp; Mock Servers" data-accent="#FF6C37">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <circle cx="64" cy="64" r="48" fill="#FF6C37" />
+                  <circle cx="52" cy="46" r="10" fill="#FFFFFF" />
+                  <path d="M42 58h20v22H42z" fill="#FFFFFF" />
+                  <path d="M62 58l18 10-6 10-12-8z" fill="#FFFFFF" />
+                  <path d="M78 44l14 8-12 10z" fill="#FFFFFF" />
+                </svg>
+              </div>
+              <span class="tech-name">Postman</span>
+            </div>
+
+            <!-- VS Code -->
+            <div class="tech-item" data-tech="VS Code" data-category="IDE"
+              data-desc="Primary Intelligent Development Environment" data-accent="#007ACC">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 128 128" class="tech-svg">
+                  <path d="M92 20l-42 34 22 18 20-16z" fill="#0066B8" />
+                  <path d="M92 108l-42-34 22-18 20 16z" fill="#007ACC" />
+                  <path d="M50 54L24 74l-8-6 26-22z" fill="#1F8AD2" />
+                  <path d="M92 20v88l18-10V30z" fill="#005A9E" />
+                </svg>
+              </div>
+              <span class="tech-name">VS Code</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Floating Cyber Telemetry Tooltip for Tech Items -->
+    <div class="tech-hover-hud" id="techHoverHud" aria-hidden="true">
+      <div class="hud-tooltip-card">
+        <div class="hud-tooltip-header">
+          <span class="hud-tooltip-dot"></span>
+          <span class="hud-tooltip-name" id="hudTechName">PYTHON</span>
+          <span class="hud-tooltip-badge" id="hudTechBadge">CORE LANGUAGE</span>
+        </div>
+        <div class="hud-tooltip-desc" id="hudTechDesc">AI/ML Workflows, Data Systems &amp; Automation</div>
+        <div class="hud-tooltip-footer">
+          <span class="hud-tooltip-status">PRODUCTION READY</span>
+          <span class="hud-tooltip-tag">VERIFIED STACK</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 05 // ACHIEVEMENTS (MILESTONES & RECOGNITION)
+       ========================================================================== -->
+  <section class="achievements-section" id="achievementsSection">
+
+    <!-- Section Opening Header -->
+    <div class="achievements-header">
+      <div class="achievements-tag-left">
+        <span class="achievements-num">05</span>
+        <span class="achievements-slash">/</span>
+        <span class="achievements-label">ACHIEVEMENTS</span>
+      </div>
+      <div class="achievements-header-divider">
+        <div class="achievements-header-line" id="achievementsHeaderLine"></div>
+      </div>
+      <div class="achievements-tag-right">
+        <span class="achievements-concept">MILESTONES &amp; RECOGNITION</span>
+      </div>
+    </div>
+
+    <!-- Section Intro Narrative Block -->
+    <div class="achievements-intro-grid">
+      <div class="achievements-intro-left">
+        <h2 class="achievements-headline">
+          MILESTONES<br>
+          THAT <span class="achieve-glow-italic">FUEL</span><br>
+          WHAT'S NEXT.
+        </h2>
+      </div>
+    </div>
+
+    <!-- Ascending 3D Mountain Terrain Elevation Stage -->
+    <div class="mountain-stage-container" id="mountainStage">
+
+        <!-- Background Ambient Elevation Nebula -->
+        <div class="mountain-ambient-glow"></div>
+
+        <!-- Floating Milestone Cards Positioned along the Elevation Ascent -->
+        <div class="milestone-cards-layer">
+
+          <!-- Milestone 01: EAMCET Rank -->
+          <div class="milestone-card card-m1" id="mCard1" data-node="1">
+            <div class="m-card-top">
+              <span class="m-card-idx">01</span>
+              <div class="m-icon-wrap">
+                <!-- Ascending bar chart icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00e599" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <line x1="18" y1="20" x2="18" y2="4"></line>
+                  <line x1="12" y1="20" x2="12" y2="10"></line>
+                  <line x1="6" y1="20" x2="6" y2="15"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="m-card-content">
+              <div class="m-card-title-stack">
+                <span class="m-title-white">EAMCET</span>
+                <span class="m-title-white">RANK</span>
+              </div>
+              <div class="m-stat-large">3162</div>
+              <p class="m-card-subtext">among 200,000+<br>candidates</p>
+            </div>
+          </div>
+
+          <!-- Milestone 02: GSSoC 2025 -->
+          <div class="milestone-card card-m2" id="mCard2" data-node="2">
+            <div class="m-card-top">
+              <span class="m-card-idx">02</span>
+              <a href="https://github.com/Sneha-Amballa" target="_blank" rel="noopener noreferrer"
+                class="m-icon-wrap m-icon-github-badge" title="Sneha Amballa on GitHub">
+                <!-- GitHub circular badge -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#00e599">
+                  <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+            <div class="m-card-content">
+              <h3 class="m-card-title-single">GSSoC 2025</h3>
+              <p class="m-card-subtext m-subtext-clean">Open Source<br>Contribution</p>
+            </div>
+          </div>
+
+          <!-- Milestone 03: HackWeek 2025 -->
+          <div class="milestone-card card-m3" id="mCard3" data-node="3">
+            <div class="m-card-top">
+              <span class="m-card-idx">03</span>
+              <div class="m-icon-wrap">
+                <!-- Lightbulb icon with radiance -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00e599" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18h6m-4 4h2m-7-9.5a6.5 6.5 0 1 1 12 0c0 2.5-1.5 3.5-2.5 5.5h-7c-1-2-2.5-3-2.5-5.5z" />
+                  <line x1="2" y1="8" x2="4" y2="8"></line>
+                  <line x1="20" y1="8" x2="22" y2="8"></line>
+                  <line x1="5" y1="3" x2="6.5" y2="4.5"></line>
+                  <line x1="19" y1="3" x2="17.5" y2="4.5"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="m-card-content">
+              <h3 class="m-card-title-single">HackWeek 2025</h3>
+            </div>
+          </div>
+
+          <!-- Milestone 04: VJ Hackathon 2025 -->
+          <div class="milestone-card card-m4" id="mCard4" data-node="4">
+            <div class="m-card-top">
+              <span class="m-card-idx">04</span>
+              <div class="m-icon-wrap">
+                <!-- Trophy icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00e599" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M6 9H4a2 2 0 0 1-2-2V5h4v4zm12 0h2a2 2 0 0 0 2-2V5h-4v4zM6 5h12v6a6 6 0 0 1-12 0V5zm4 14h4v-3h-4v3zm-3 3h10v-3H7v3z" />
+                </svg>
+              </div>
+            </div>
+            <div class="m-card-content">
+              <h3 class="m-card-title-single">VJ Hackathon 2025</h3>
+              <div class="m-stat-large">Top 32</div>
+              <p class="m-card-subtext">among 3000+<br>participants</p>
+            </div>
+          </div>
+
+          <!-- Milestone 05: ECWoC 2026 -->
+          <div class="milestone-card card-m5" id="mCard5" data-node="5">
+            <div class="m-card-top">
+              <span class="m-card-idx">05</span>
+              <div class="m-icon-wrap">
+                <!-- Community / 3-user group icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00e599" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="m-card-content">
+              <h3 class="m-card-title-single">ECWoC 2026</h3>
+              <div class="m-stat-large">Top 30</div>
+              <p class="m-card-subtext">among 2,625<br>participants</p>
+            </div>
+          </div>
+
+        </div>
+        <svg class="mountain-svg" id="mountainSvg" viewBox="0 0 1400 440" preserveAspectRatio="none">
+          <defs>
+            <!-- Neon Ridge Glow Filter -->
+            <filter id="ridgeGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <linearGradient id="ridgeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00e599" stop-opacity="0.8" />
+              <stop offset="50%" stop-color="#00ffa3" stop-opacity="1" />
+              <stop offset="100%" stop-color="#00e599" stop-opacity="0.9" />
+            </linearGradient>
+
+            <!-- Background Wave Gradients -->
+            <linearGradient id="backWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00e599" stop-opacity="0.12" />
+              <stop offset="50%" stop-color="#043224" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#02140e" stop-opacity="0.35" />
+            </linearGradient>
+
+            <linearGradient id="midWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00e599" stop-opacity="0.18" />
+              <stop offset="60%" stop-color="#03261b" stop-opacity="0.25" />
+              <stop offset="100%" stop-color="#010e0a" stop-opacity="0.45" />
+            </linearGradient>
+
+            <linearGradient id="trajectoryGlowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00e599" stop-opacity="0.22" />
+              <stop offset="40%" stop-color="#00e599" stop-opacity="0.08" />
+              <stop offset="100%" stop-color="#00e599" stop-opacity="0.0" />
+            </linearGradient>
+          </defs>
+
+          <!-- Back Flowing Wave Silhouette -->
+          <path d="M 0 410 C 300 360 600 420 900 360 C 1150 310 1300 380 1400 360 L 1400 440 L 0 440 Z"
+            fill="url(#backWaveGrad)" stroke="rgba(0, 229, 153, 0.15)" stroke-width="1.2" />
+
+          <!-- Mid Flowing Wave Silhouette -->
+          <path d="M 0 390 C 250 420 500 340 800 380 C 1100 400 1250 320 1400 340 L 1400 440 L 0 440 Z"
+            fill="url(#midWaveGrad)" stroke="rgba(0, 229, 153, 0.22)" stroke-width="1.2" />
+
+          <!-- Trajectory Soft Glowing Gradient Under-Fill -->
+          <path d="M 30 400 C 70 390 110 370 160 365 C 230 360 270 385 330 380 C 370 375 400 345 430 330 C 490 305 530 345 590 342 C 640 340 660 310 690 300 C 750 280 800 315 860 310 C 910 305 930 290 960 280 C 1020 265 1070 290 1130 285 C 1180 280 1205 260 1230 250 C 1280 230 1340 270 1400 290 L 1400 440 L 30 440 Z"
+            fill="url(#trajectoryGlowGrad)" />
+
+          <!-- Primary Glowing Ascending Undulating Trajectory Spline -->
+          <path d="M 30 400 C 70 390 110 370 160 365 C 230 360 270 385 330 380 C 370 375 400 345 430 330 C 490 305 530 345 590 342 C 640 340 660 310 690 300 C 750 280 800 315 860 310 C 910 305 930 290 960 280 C 1020 265 1070 290 1130 285 C 1180 280 1205 260 1230 250 C 1280 230 1340 270 1400 290"
+            fill="none" stroke="url(#ridgeGrad)" stroke-width="3" filter="url(#ridgeGlow)" class="ridge-main-path" />
+
+          <!-- Vertical Connector Stems from Nodes to Cards -->
+          <!-- Pin 1: (160, 365) to (160, 320) -->
+          <line x1="160" y1="365" x2="160" y2="320" stroke="#00e599" stroke-width="2" class="beacon-line bl-1" />
+          <circle cx="160" cy="320" r="3.5" fill="#00e599" />
+
+          <!-- Pin 2: (430, 330) to (430, 275) -->
+          <line x1="430" y1="330" x2="430" y2="275" stroke="#00e599" stroke-width="2" class="beacon-line bl-2" />
+          <circle cx="430" cy="275" r="3.5" fill="#00e599" />
+
+          <!-- Pin 3: (690, 300) to (690, 220) -->
+          <line x1="690" y1="300" x2="690" y2="220" stroke="#00e599" stroke-width="2" class="beacon-line bl-3" />
+          <circle cx="690" cy="220" r="3.5" fill="#00e599" />
+
+          <!-- Pin 4: (960, 280) to (960, 240) -->
+          <line x1="960" y1="280" x2="960" y2="240" stroke="#00e599" stroke-width="2" class="beacon-line bl-4" />
+          <circle cx="960" cy="240" r="3.5" fill="#00e599" />
+
+          <!-- Pin 5: (1230, 250) to (1230, 210) -->
+          <line x1="1230" y1="250" x2="1230" y2="210" stroke="#00e599" stroke-width="2" class="beacon-line bl-5" />
+          <circle cx="1230" cy="210" r="3.5" fill="#00e599" />
+
+          <!-- Far-Left Origin Glow Dot -->
+          <circle cx="30" cy="400" r="9" fill="#00e599" fill-opacity="0.2" />
+          <circle cx="30" cy="400" r="4" fill="#00e599" />
+
+          <!-- 5 Interactive Glowing Terrain Nodes -->
+          <!-- Node 1 -->
+          <g class="terrain-node tn-1" data-target-card="mCard1" transform="translate(160, 365)">
+            <circle cx="0" cy="0" r="16" fill="#00e599" fill-opacity="0.2" stroke="rgba(0, 229, 153, 0.55)" stroke-width="1.5" class="node-ripple" />
+            <circle cx="0" cy="0" r="7" fill="#00e599" filter="url(#ridgeGlow)" />
+            <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+          </g>
+
+          <!-- Node 2 -->
+          <g class="terrain-node tn-2" data-target-card="mCard2" transform="translate(430, 330)">
+            <circle cx="0" cy="0" r="16" fill="#00e599" fill-opacity="0.2" stroke="rgba(0, 229, 153, 0.55)" stroke-width="1.5" class="node-ripple" />
+            <circle cx="0" cy="0" r="7" fill="#00e599" filter="url(#ridgeGlow)" />
+            <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+          </g>
+
+          <!-- Node 3 -->
+          <g class="terrain-node tn-3" data-target-card="mCard3" transform="translate(690, 300)">
+            <circle cx="0" cy="0" r="16" fill="#00e599" fill-opacity="0.2" stroke="rgba(0, 229, 153, 0.55)" stroke-width="1.5" class="node-ripple" />
+            <circle cx="0" cy="0" r="7" fill="#00e599" filter="url(#ridgeGlow)" />
+            <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+          </g>
+
+          <!-- Node 4 -->
+          <g class="terrain-node tn-4" data-target-card="mCard4" transform="translate(960, 280)">
+            <circle cx="0" cy="0" r="16" fill="#00e599" fill-opacity="0.2" stroke="rgba(0, 229, 153, 0.55)" stroke-width="1.5" class="node-ripple" />
+            <circle cx="0" cy="0" r="7" fill="#00e599" filter="url(#ridgeGlow)" />
+            <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+          </g>
+
+          <!-- Node 5 -->
+          <g class="terrain-node tn-5 summit-node" data-target-card="mCard5" transform="translate(1230, 250)">
+            <circle cx="0" cy="0" r="17" fill="#00e599" fill-opacity="0.25" stroke="rgba(0, 229, 153, 0.65)" stroke-width="1.8" class="node-ripple-summit" />
+            <circle cx="0" cy="0" r="8" fill="#00e599" filter="url(#ridgeGlow)" />
+            <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
+          </g>
+        </svg>
+
+      </div>
+
+      <!-- Achievements Key Stats Counter Bar -->
+      <div class="achievements-stats-strip">
+        <div class="achieve-stat-col">
+          <span class="achieve-stat-num"><span class="achieve-odometer" data-target="4">4</span><span
+              class="achieve-plus">+</span></span>
+          <span class="achieve-stat-label"><span class="stat-slash">//</span> COMPETITIONS</span>
+        </div>
+
+        <div class="achieve-stat-col">
+          <span class="achieve-stat-num"><span class="achieve-odometer" data-target="1">1</span></span>
+          <span class="achieve-stat-label"><span class="stat-slash">//</span> STATE ACADEMIC RANK</span>
+        </div>
+
+        <div class="achieve-stat-col">
+          <span class="achieve-stat-num"><span class="achieve-odometer" data-target="3">3</span></span>
+          <span class="achieve-stat-label"><span class="stat-slash">//</span> OPEN SOURCE &amp; HACKATHONS</span>
+        </div>
+
+        <div class="achieve-stat-col">
+          <span class="achieve-stat-num achieve-infinity">∞</span>
+          <span class="achieve-stat-label"><span class="stat-slash">//</span> HORIZONS CONTINUOUS</span>
+        </div>
+      </div>
+
+      <!-- Lower Component: Certifications Matrix Strip -->
+      <div class="certifications-container">
+
+        <!-- Certifications Header with Horizontal Navigation Controls -->
+        <div class="certifications-header">
+          <div class="cert-header-left">
+            <span class="cert-cross-icon">✕</span>
+            <span class="cert-header-title">CERTIFICATIONS</span>
+          </div>
+          <div class="cert-header-divider">
+            <div class="cert-header-line" id="certsHeaderLine"></div>
+          </div>
+          <div class="cert-header-right">
+            <span class="cert-concept">CONTINUOUSLY UPSKILLING</span>
+            <div class="certs-nav-controls">
+              <button class="certs-nav-btn" id="certsPrevBtn" aria-label="Previous Certificate"
+                title="Previous Certificate">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div class="certs-status-badge">
+                <span id="certsCurrentIndex">01</span>
+                <span>/</span>
+                <span>04</span>
+              </div>
+              <button class="certs-nav-btn" id="certsNextBtn" aria-label="Next Certificate" title="Next Certificate">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsive Real PDF Certifications Grid -->
+        <div class="certifications-grid" id="certificationsGrid">
+
+          <!-- Certificate Slot 01: NPTEL Machine Learning -->
+          <div class="cert-pdf-card active" data-cert-id="1" data-pdf="assets/certificates/NPTEL_Machine_Learning.pdf"
+            data-title="NPTEL – Machine Learning" data-issuer="IIT Kharagpur &amp; Swayam (Ministry of Education)">
+            <span class="card-corner card-corner-tl"></span>
+            <span class="card-corner card-corner-tr"></span>
+            <span class="card-corner card-corner-bl"></span>
+            <span class="card-corner card-corner-br"></span>
+            <div class="cert-card-top">
+              <span class="cert-idx">01</span>
+              <span class="cert-pdf-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                VERIFIED PDF
+              </span>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-icon-emblem cert-emblem-nptel">
+                <img src="assets/images/logos/nptel_icon.png" alt="NPTEL Logo" class="cert-emblem-img" />
+              </div>
+              <div class="cert-meta">
+                <h4 class="cert-title">NPTEL – Machine Learning</h4>
+                <p class="cert-issuer-text">IIT Kharagpur &amp; Swayam (Ministry of Education)</p>
+                <code class="cert-filename">NPTEL_Machine_Learning.pdf</code>
+              </div>
+            </div>
+            <div class="cert-actions-row">
+              <button class="cert-btn-preview" data-open-pdf="assets/certificates/NPTEL_Machine_Learning.pdf"
+                data-cert-title="NPTEL – Machine Learning" aria-label="View NPTEL Machine Learning Certificate PDF">
+                <span>VIEW PDF</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <a href="assets/certificates/NPTEL_Machine_Learning.pdf" download="NPTEL_Machine_Learning.pdf"
+                class="cert-btn-dl" title="Download PDF" aria-label="Download NPTEL Machine Learning Certificate">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Certificate Slot 02: Postman API Challenge -->
+          <div class="cert-pdf-card" data-cert-id="2" data-pdf="assets/certificates/Postman_Challenge.pdf"
+            data-title="Postman – API Fundamentals" data-issuer="Postman Official Student Expert">
+            <span class="card-corner card-corner-tl"></span>
+            <span class="card-corner card-corner-tr"></span>
+            <span class="card-corner card-corner-bl"></span>
+            <span class="card-corner card-corner-br"></span>
+            <div class="cert-card-top">
+              <span class="cert-idx">02</span>
+              <span class="cert-pdf-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                VERIFIED PDF
+              </span>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-icon-emblem cert-emblem-postman">
+                <img src="assets/images/logos/postman_icon.png" alt="Postman Logo" class="cert-emblem-img" />
+              </div>
+              <div class="cert-meta">
+                <h4 class="cert-title">Postman – API Fundamentals</h4>
+                <p class="cert-issuer-text">Postman Official Student Expert</p>
+                <code class="cert-filename">Postman_Challenge.pdf</code>
+              </div>
+            </div>
+            <div class="cert-actions-row">
+              <button class="cert-btn-preview" data-open-pdf="assets/certificates/Postman_Challenge.pdf"
+                data-cert-title="Postman – API Fundamentals" aria-label="View Postman API Challenge Certificate PDF">
+                <span>VIEW PDF</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <a href="assets/certificates/Postman_Challenge.pdf" download="Postman_Challenge.pdf" class="cert-btn-dl"
+                title="Download PDF" aria-label="Download Postman Challenge Certificate">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Certificate Slot 03: HackerRank Python -->
+          <div class="cert-pdf-card" data-cert-id="3" data-pdf="assets/certificates/python basic hackerrank.pdf"
+            data-title="HackerRank – Python &amp; Problem Solving" data-issuer="HackerRank Official Assessment">
+            <span class="card-corner card-corner-tl"></span>
+            <span class="card-corner card-corner-tr"></span>
+            <span class="card-corner card-corner-bl"></span>
+            <span class="card-corner card-corner-br"></span>
+            <div class="cert-card-top">
+              <span class="cert-idx">03</span>
+              <span class="cert-pdf-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                VERIFIED PDF
+              </span>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-icon-emblem cert-emblem-hackerrank">
+                <img src="assets/images/logos/hackerrank_icon.png" alt="HackerRank Logo" class="cert-emblem-img" />
+              </div>
+              <div class="cert-meta">
+                <h4 class="cert-title">HackerRank – Python &amp; Problem Solving</h4>
+                <p class="cert-issuer-text">HackerRank Official Assessment</p>
+                <code class="cert-filename">python_basic_hackerrank.pdf</code>
+              </div>
+            </div>
+            <div class="cert-actions-row">
+              <button class="cert-btn-preview" data-open-pdf="assets/certificates/python basic hackerrank.pdf"
+                data-cert-title="HackerRank – Python &amp; Problem Solving"
+                aria-label="View HackerRank Certificate PDF">
+                <span>VIEW PDF</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <a href="assets/certificates/python basic hackerrank.pdf" download="python_basic_hackerrank.pdf"
+                class="cert-btn-dl" title="Download PDF" aria-label="Download HackerRank Certificate">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Certificate Slot 04: Masai x IIT Patna -->
+          <div class="cert-pdf-card" data-cert-id="4" data-pdf="assets/certificates/NPTEL_Machine_Learning.pdf"
+            data-title="Masai x IIT Patna – AI/ML Certification" data-issuer="Academic Specialization &amp; Hackathons">
+            <span class="card-corner card-corner-tl"></span>
+            <span class="card-corner card-corner-tr"></span>
+            <span class="card-corner card-corner-bl"></span>
+            <span class="card-corner card-corner-br"></span>
+            <div class="cert-card-top">
+              <span class="cert-idx">04</span>
+              <span class="cert-pdf-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                VERIFIED PDF
+              </span>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-icon-emblem cert-emblem-iit">
+                <img src="assets/images/logos/iit_patna_icon.png" alt="IIT Patna Logo" class="cert-emblem-img" />
+              </div>
+              <div class="cert-meta">
+                <h4 class="cert-title">Masai x IIT Patna – AI/ML Certification</h4>
+                <p class="cert-issuer-text">Academic Specialization &amp; Hackathons</p>
+                <code class="cert-filename">AI_ML_Specialization.pdf</code>
+              </div>
+            </div>
+            <div class="cert-actions-row">
+              <button class="cert-btn-preview" data-open-pdf="assets/certificates/NPTEL_Machine_Learning.pdf"
+                data-cert-title="Masai x IIT Patna – AI/ML Certification" aria-label="View Specialization PDF">
+                <span>VIEW PDF</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <a href="assets/certificates/NPTEL_Machine_Learning.pdf" download="AI_ML_Specialization.pdf"
+                class="cert-btn-dl" title="Download Credential" aria-label="Download Specialization Credential">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Certifications Rail Progress Track matching Image 5 -->
+        <div class="certs-track-progress-wrap">
+          <button class="certs-rail-arrow rail-arrow-left" id="certsRailPrevBtn" aria-label="Previous Certificate"
+            title="Previous Certificate">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <div class="certs-progress-track">
+            <div class="certs-progress-fill" id="certsProgressFill" style="width: 25%;"></div>
+          </div>
+          <button class="certs-rail-arrow rail-arrow-right" id="certsRailNextBtn" aria-label="Next Certificate"
+            title="Next Certificate">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ==========================================================================
+         AUTHENTIC IN-PAGE PDF CERTIFICATE LIGHTBOX MODAL
+         ========================================================================== -->
+      <div class="pdf-viewer-overlay" id="pdfViewerModal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="pdfModalDocTitle">
+        <div class="pdf-modal-backdrop" id="pdfModalBackdrop"></div>
+
+        <div class="pdf-modal-window">
+
+          <!-- Modal Top Bar -->
+          <div class="pdf-modal-topbar">
+            <div class="pdf-doc-meta-left">
+              <span class="pdf-type-tag">PDF</span>
+              <div class="pdf-titles-col">
+                <h3 class="pdf-modal-title" id="pdfModalDocTitle">NPTEL – Machine Learning (Elite Credential)</h3>
+                <span class="pdf-modal-path"
+                  id="pdfModalPathDisplay">assets/certificates/NPTEL_Machine_Learning.pdf</span>
+              </div>
+            </div>
+
+            <!-- Quick Tab Switcher -->
+            <div class="pdf-modal-tabs" id="pdfModalTabs">
+              <button class="pdf-tab-btn active" data-switch-cert="1">01</button>
+              <button class="pdf-tab-btn" data-switch-cert="2">02</button>
+              <button class="pdf-tab-btn" data-switch-cert="3">03</button>
+              <button class="pdf-tab-btn" data-switch-cert="4">04</button>
+            </div>
+
+            <!-- Utility Actions: Open External, Download, Close -->
+            <div class="pdf-modal-actions-right">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="pdf-action-btn" id="pdfOpenExternalBtn"
+                title="Open PDF in New Browser Tab">
+                <span>OPEN TAB</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                </svg>
+              </a>
+              <a href="#" download class="pdf-action-btn" id="pdfDownloadDirectBtn" title="Download Original PDF">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>DOWNLOAD</span>
+              </a>
+              <button class="pdf-modal-close-btn" id="pdfModalCloseBtn" title="Close Viewer (ESC)"
+                aria-label="Close PDF Viewer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal PDF Viewport Body -->
+          <div class="pdf-modal-body">
+
+            <!-- Live Embedded PDF Document Viewer Frame -->
+            <iframe id="pdfViewerIframe" src="" class="pdf-embed-frame"
+              title="Certificate PDF Viewer Document Frame"></iframe>
+
+            <!-- Document Status Notice (displays if PDF is loading or temporarily unlinked) -->
+            <div class="pdf-fallback-container" id="pdfFallbackNotice" style="display: none;">
+              <div class="pdf-fallback-card">
+                <div class="fallback-icon-ring">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#00e599" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <h4 class="fallback-title">OFFICIAL CREDENTIAL FILE</h4>
+                <p class="fallback-text">
+                  Document is referenced directly from local portfolio assets:
+                </p>
+                <code class="fallback-filepath"
+                  id="fallbackFilePathDisplay">assets/certificates/NPTEL_Machine_Learning.pdf</code>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Modal Bottom Helper Bar -->
+          <div class="pdf-modal-bottom-bar">
+            <span class="pdf-hint-text">Use <kbd>←</kbd> <kbd>→</kbd> arrow keys to switch certificates &bull;
+              <kbd>ESC</kbd> to exit</span>
+            <span class="pdf-status-text">OFFICIAL VERIFIED DOCUMENT RENDERING</span>
+          </div>
+
+        </div>
+      </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 06 // TRANSMISSION (CONTACT & INITIATION)
+       ========================================================================== -->
+  <footer class="contact-section" id="contactSection">
+
+    <!-- Section Opening Header -->
+    <div class="contact-header">
+      <div class="contact-tag-left">
+        <span class="contact-num">06</span>
+        <span class="contact-slash">/</span>
+        <span class="contact-label">CONTACT</span>
+      </div>
+      <div class="contact-header-divider">
+        <div class="contact-header-line" id="contactHeaderLine"></div>
+      </div>
+      <div class="contact-tag-right">
+        <span class="contact-concept">LET'S BUILD TOGETHER</span>
+      </div>
+    </div>
+
+    <!-- Main Contact Stage Grid -->
+    <div class="contact-stage-grid">
+
+      <!-- Left Column: Headline, Subtitle, 3 Channels, and Interactive Message Form -->
+      <div class="contact-left-col">
+
+        <!-- Hero Headline -->
+        <h2 class="contact-hero-headline">
+          HAVE AN <span class="contact-glow-italic">IDEA?</span><br>
+          LET’S BUILD IT.
+        </h2>
+
+        <!-- Context Subtitle -->
+        <p class="contact-hero-sub">
+          I'm always open to discussing new ideas, interesting problems, collaborations or opportunities. Feel free to
+          reach out!
+        </p>
+
+        <!-- 3 Direct Contact Channels Row -->
+        <div class="contact-channels-row">
+
+          <!-- Channel 1: Email -->
+          <a href="mailto:amballasneha25@gmail.com" class="channel-card card-email" id="emailChannelCard"
+            title="Send Email">
+            <div class="channel-icon-box box-email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e599" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <div class="channel-content">
+              <span class="channel-label">EMAIL</span>
+              <span class="channel-val">seha.amballa0804@gmail.com</span>
+            </div>
+            <div class="channel-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Channel 2: LinkedIn -->
+          <a href="https://www.linkedin.com/in/sneha-amballa-147646308/" target="_blank" rel="noopener noreferrer"
+            class="channel-card card-linkedin" title="LinkedIn Profile">
+            <div class="channel-icon-box box-linkedin">
+              <span class="in-brand-text">in</span>
+            </div>
+            <div class="channel-content">
+              <span class="channel-label">LINKEDIN</span>
+              <span class="channel-val">Sneha Amballa</span>
+            </div>
+            <div class="channel-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Channel 3: GitHub -->
+          <a href="https://github.com/Sneha-Amballa" target="_blank" rel="noopener noreferrer"
+            class="channel-card card-github" title="GitHub Profile">
+            <div class="channel-icon-box box-github">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+            </div>
+            <div class="channel-content">
+              <span class="channel-label">GITHUB</span>
+              <span class="channel-val">Sneha-Amballa</span>
+            </div>
+            <div class="channel-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- "SEND A MESSAGE" Interactive Glassmorphism Form Card -->
+        <div class="contact-form-card" id="contactFormCard">
+
+          <div class="form-card-header">
+            <div class="form-title-wrap">
+              <span class="form-teal-bar"></span>
+              <span class="form-header-title">SEND A MESSAGE</span>
+            </div>
+            <span class="form-idx-mono">01</span>
+          </div>
+
+          <form class="portfolio-form" id="portfolioContactForm" onsubmit="return false;">
+
+            <!-- Row 1: Split Name & Email -->
+            <div class="form-row form-row-split">
+              <div class="form-group">
+                <input type="text" id="contactName" name="name" class="form-field-input" placeholder="Your Name"
+                  required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <input type="email" id="contactEmail" name="email" class="form-field-input" placeholder="Your Email"
+                  required autocomplete="email" />
+              </div>
+            </div>
+
+            <!-- Row 2: Subject -->
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="contactSubject" name="subject" class="form-field-input" placeholder="Subject"
+                  required />
+              </div>
+            </div>
+
+            <!-- Row 3: Message Textarea -->
+            <div class="form-row">
+              <div class="form-group">
+                <textarea id="contactMessage" name="message" class="form-field-textarea" placeholder="Your Message"
+                  rows="3" required></textarea>
+              </div>
+            </div>
+
+            <!-- Row 4: Submit Button -->
+            <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">
+              <span class="submit-btn-text">Send Message</span>
+              <span class="submit-btn-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </button>
+
+            <!-- Status Feedback Container -->
+            <div class="form-feedback-notice" id="formFeedbackNotice" aria-live="polite"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column: Telemetry Status & Interactive Movable 3D Globe -->
+      <div class="contact-right-col">
+
+        <!-- Top Telemetry Status Strip with Base Location and Always-Open Chips -->
+        <div class="contact-telemetry-header">
+          <div class="telemetry-base-badge">
+            <span class="telemetry-live-dot"></span>
+            <span class="telemetry-base-txt">BASE // HYDERABAD, INDIA</span>
+            <span class="telemetry-tz-txt">[UTC+05:30]</span>
+          </div>
+          <div class="telemetry-open-chips">
+            <span class="telemetry-chip">Interesting Projects</span>
+            <span class="telemetry-chip">Collaboration</span>
+            <span class="telemetry-chip">Open Source</span>
+            <span class="telemetry-chip">Tech Discussions</span>
+          </div>
+        </div>
+
+        <!-- 3D Movable Globe Container -->
+        <div class="contact-globe-wrapper" id="contactGlobeWrapper">
+          <!-- WebGL 3D Canvas -->
+          <canvas id="contactGlobeCanvas" class="contact-globe-canvas"></canvas>
+
+          <!-- 3D Anchored Telemetry Callout (Pinned dynamically to Hyderabad) -->
+          <div class="globe-hyd-callout" id="globeHydCallout" aria-hidden="true">
+            <div class="callout-card">
+              <div class="callout-top-row">
+                <span class="callout-ping-dot"></span>
+                <span class="callout-tag">SNEHA'S LOCATION</span>
+                <span class="callout-live-badge">ONLINE</span>
+              </div>
+              <div class="callout-city">Hyderabad, India</div>
+              <div class="callout-coords">17.3850° N, 78.4867° E</div>
+              <div class="callout-desc">Ready for Engineering &amp; AI Collaborations</div>
+            </div>
+            <div class="callout-pointer-stem"></div>
+          </div>
+
+          <!-- Glassmorphic Corner HUD Overlays -->
+          <div class="globe-overlay-hud">
+            <!-- Top Left Telemetry Tag -->
+            <div class="hud-top-tag">
+              <span class="hud-orbit-label">EARTH TELEMETRY // 3D GEO-NODE</span>
+              <span class="hud-sub-label">ROTATION: ACTIVE · DRAG ENABLED</span>
+            </div>
+
+            <!-- Bottom Interactive Controls & Location Center Button -->
+            <div class="globe-action-bar">
+              <div class="globe-drag-hint">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-1.19" />
+                </svg>
+                <span>DRAG TO ROTATE GLOBE</span>
+              </div>
+              <button type="button" class="globe-locate-btn" id="globeFocusHydBtn"
+                title="Center camera on Hyderabad, India">
+                <span class="locate-icon">📍</span>
+                <span>FOCUS HYDERABAD</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Colophon & Navigation Return Bar -->
+    <div class="contact-bottom-colophon">
+      <div class="colophon-left">
+        <span class="colophon-text">DESIGNED &amp; DEVELOPED BY SNEHA AMBALLA</span>
+        <span class="colophon-divider">/</span>
+        <span class="colophon-text">ENGINEERED FOR PRODUCTION</span>
+      </div>
+      <div class="colophon-right">
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Return to index top">
+          <span>BACK TO TOP</span>
+          <span class="top-arrow">↑</span>
+        </button>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- CDN Dependencies: Three.js, GSAP, ScrollTrigger, Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/orb.js"></script>
+  <script src="js/contact-globe.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
